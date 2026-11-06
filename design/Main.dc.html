@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Word Works — Comunicación que conecta</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+*,*::before,*::after{box-sizing:border-box}
+a{color:#FFFFFF}a:hover{color:#FF7803}
+.ww{position:relative;background:#000000;color:#FFFFFF;font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.ww p{margin:0}
+.ww :focus-visible{outline:2px solid #FF7803;outline-offset:3px}
+.accent{color:#FF7803}
+/* header */
+.hdr{position:absolute;top:0;left:0;right:0;z-index:20;height:74px;display:flex;align-items:center;padding:0 max(32px,calc((100% - 1040px) / 2))}
+.hdr.solid{background:#000000}
+.logo{display:block;width:38px;height:60px;flex:none}
+.logo svg{display:block;width:100%;height:100%}
+.nav{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:40px;margin:0;padding:0;list-style:none}
+.nav>li{position:relative}
+.nl{display:flex;align-items:center;gap:12px;height:74px;color:#FFFFFF;text-decoration:none;font-size:16px;white-space:nowrap;background:none;border:0;padding:0;font-family:inherit;cursor:pointer}
+.nl:hover,.nl.active{color:#FF7803}
+.nl.active .lbl{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
+.caret{width:0;height:0;border-left:4.5px solid transparent;border-right:4.5px solid transparent;border-top:7px solid currentColor;transition:transform .2s}
+.dd{position:absolute;top:66px;left:-16px;min-width:230px;margin:0;padding:12px 0;list-style:none;background:#000000;border-top:2px solid #FF7803;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s}
+.has-sub:hover .dd,.has-sub:focus-within .dd{opacity:1;visibility:visible;transform:none}
+.has-sub:hover .caret,.has-sub:focus-within .caret{transform:rotate(180deg)}
+.dd a{display:block;padding:10px 16px;font-size:15px;color:#FFFFFF;text-decoration:none;white-space:nowrap}
+.dd a:hover,.dd a.active{color:#FF7803}
+.burger{display:none;margin-left:auto;width:48px;height:48px;background:none;border:0;padding:12px 0 12px 12px;cursor:pointer}
+.burger span{display:block;height:2px;background:#FFFFFF;border-radius:1px}
+.burger span+span{margin-top:8px}
+.mm{position:fixed;inset:0;z-index:40;background:#000000;padding:22px 36px 32px;overflow-y:auto}
+.mm-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.mm-top .logo{width:29px;height:46px}
+.mm-close{width:48px;height:48px;background:none;border:0;color:#FFFFFF;font-size:34px;line-height:1;cursor:pointer;font-family:inherit}
+.mm-grp{border-bottom:1px solid #2A2A2A;padding:16px 0}
+.mm-h{display:block;font-size:20px;font-weight:500;color:#FFFFFF;text-decoration:none}
+.mm-h.active{color:#FF7803}
+.mm-grp a.sub{display:block;padding:9px 0 0 16px;font-size:17px;color:#FFFFFF;text-decoration:none}
+.mm-grp a.sub.active,.mm-grp a.sub:hover{color:#FF7803}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:28px;background:#FF7803;color:#FFFFFF;font-size:17px;font-weight:400;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background .15s,transform .15s}
+.btn:hover{background:#E86C00;color:#FFFFFF;transform:translateY(-1px)}
+.btn-sm{min-height:48px;padding:0 24px;font-size:16px;border-radius:24px}
+/* motion */
+@keyframes ww-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes ww-fade{from{opacity:0}to{opacity:1}}
+.load{animation:ww-rise .8s cubic-bezier(.2,.7,.2,1) both}
+.load-2{animation-delay:.15s}.load-3{animation-delay:.3s}
+.load-fade{animation:ww-fade 1.2s ease both .2s}
+.reveal{animation:ww-rise .8s cubic-bezier(.2,.7,.2,1) both}
+@supports (animation-timeline: view()){.reveal{animation:ww-rise linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+@media (prefers-reduced-motion:reduce){.load,.reveal,.load-fade{animation:none}.btn,.dd,.caret{transition:none}}
+/* layout */
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+.narrow{max-width:606px;margin:0 auto}
+.prose p{text-align:justify}
+.prose p+p{margin-top:28px}
+.below{padding-top:74px}
+/* photo hero (stand-in backgrounds until real photos are uploaded) */
+.photo{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 32px;overflow:hidden}
+.photo::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.photo>*{position:relative}
+.ph-label{position:absolute;right:16px;bottom:14px;padding:4px 10px;border-radius:4px;background:rgba(0,0,0,.6);color:#FFFFFF;font-size:12px;line-height:1.4}
+.hero-c{max-width:780px}
+.pt{margin:0;font-size:56px;line-height:1.2;font-weight:600;color:#FF7803}
+.pt .w{color:#F1F1F1}
+.pt.light{font-weight:400;font-size:62px;line-height:1.35}
+.sub{margin-top:28px;font-size:22px;line-height:1.4}
+.sub.strong{font-weight:600;font-size:24px}
+.ph-calidad{background:linear-gradient(100deg,#2f3438 0%,#5b6166 40%,#8a8f93 68%,#4b5054 100%)}
+.ph-equipo{background:radial-gradient(ellipse 60% 70% at 58% 8%,#e2a457 0%,#8a5222 28%,#2a1c12 62%,#140e0a 100%)}
+.ph-global{background:radial-gradient(ellipse at 50% 25%,#5a4a3e 0%,#2a2420 50%,#151311 100%)}
+.ph-ai{background:radial-gradient(circle at 88% 28%,rgba(255,190,110,.38) 0 4%,transparent 5.5%),radial-gradient(ellipse at 32% 35%,#6b5a48 0%,#2b2722 45%,#141312 100%)}
+.ph-team{background:linear-gradient(110deg,#57544f 0%,#8b8781 45%,#a09a92 60%,#6d6a66 100%)}
+.ph-ling{background:radial-gradient(ellipse at 50% 45%,#7a5232 0%,#3a281a 50%,#1c140e 100%)}
+.ph-red{background:radial-gradient(circle at 12% 18%,rgba(230,90,60,.45) 0 6%,transparent 12%),radial-gradient(circle at 40% 85%,rgba(60,110,200,.45) 0 6%,transparent 13%),radial-gradient(circle at 92% 60%,rgba(255,140,60,.45) 0 6%,transparent 12%),#15161a}
+.ph-contact{background:radial-gradient(circle at 60% 33%,rgba(255,170,110,.35) 0 3%,transparent 4%),linear-gradient(180deg,#3f464c 0%,#4b4e50 62%,#5a4632 100%)}
+.ph-faq{background:linear-gradient(100deg,#2c3238 0%,#4a525a 52%,#2f353b 100%)}
+.ph-quienes{background:radial-gradient(ellipse at 70% 40%,#4a4038 0%,#26211d 55%,#141110 100%)}
+.ph-bokeh{background:radial-gradient(circle at 8% 15%,rgba(255,140,40,.75) 0 7%,transparent 7.6%),radial-gradient(circle at 37% 30%,rgba(255,140,40,.7) 0 6%,transparent 6.6%),radial-gradient(circle at 58% 18%,rgba(255,150,60,.75) 0 5%,transparent 5.6%),radial-gradient(circle at 80% 25%,rgba(70,150,220,.45) 0 12%,transparent 22%),#0d1622}
+/* bubble section */
+.bsec{padding:120px 32px;text-align:center}
+.bicon{display:block;width:46px;height:78px;margin:0 auto 44px}
+.st{margin:0 auto;max-width:900px;font-size:32px;line-height:1.3;font-weight:500;text-transform:uppercase;color:#F1F1F1}
+.st-block{display:block}
+.intro{max-width:760px;margin:40px auto 0;font-size:17px;line-height:1.55;text-align:justify}
+.intro.c{text-align:center}
+.kw{margin:0;padding:0 0 0 24px;text-align:left;font-size:17px;line-height:1.55}
+.kw li+li{margin-top:24px}
+.kw strong{font-weight:700}
+.todo{max-width:760px;margin:0 auto;padding:28px 24px;border:1px dashed #555;border-radius:8px;color:#BDBDBD;font-size:14px;text-align:center}
+.todo-wrap{padding:0 32px 110px}
+/* footer */
+.f-bubble{display:flex;justify-content:center;padding:56px 32px 110px}
+.f-bubble svg{width:110px;height:177px}
+.ftr{padding-top:48px}
+.f-cols{display:grid;grid-template-columns:39% 25% 1fr;max-width:1040px;margin:0 auto;padding:0 32px;box-sizing:content-box}
+.f-in{max-width:1040px;margin:0 auto;box-sizing:content-box}
+.f-cols h5{margin:0 0 18px;font-size:26px;line-height:1.2;font-weight:600;color:#FFFFFF}
+.f-tag{max-width:300px;font-size:14px;line-height:1.3}
+.social{display:flex;gap:100px;margin:24px 0 52px}
+.social a{display:block;width:26px;height:26px;color:#FF7803}
+.social svg{display:block;width:100%;height:100%}
+.f-contact a{display:block;margin-bottom:12px;font-size:16px;text-underline-offset:3px}
+.f-links{margin:0;padding:0;list-style:none}
+.f-links li+li{margin-top:12px}
+.f-links a{font-size:14px;text-underline-offset:3px}
+.f-links .b{font-weight:600}
+.copy{padding:56px 32px 26px;font-size:14px}
+/* forms */
+.form{display:grid;gap:24px}
+.field label{display:block;margin-bottom:8px;font-size:16px;color:#F1F1F1}
+.field input,.field textarea{width:100%;height:48px;padding:0 16px;background:#F1F1F1;color:#111111;border:0;border-radius:0;font:400 16px/1.4 Montserrat,Arial,sans-serif}
+.field textarea{height:96px;padding:12px 16px;resize:vertical}
+.field ::placeholder{color:#6E6E6E}
+.form.rounded .field input,.form.rounded .field textarea{height:52px;border:1px solid #C8C8C8;border-radius:12px}
+.form.rounded .field textarea{height:96px}
+
+.home-hero{position:relative;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 32px 90px;overflow:hidden;background:linear-gradient(118deg,#141414 0%,#1C1C1C 30%,#232323 46%,#6B3E17 56%,#C8600E 63%,#FF7803 71%,#FC831B 76%,#FAB57E 88%,#F7F4EF 100%)}
+.home-hero .hb{position:absolute;left:9.3%;top:50%;width:222px;height:337px;margin-top:-150px}
+.home-hero .inner{position:relative;max-width:660px}
+.home-hero h1{margin:0;font-size:64px;line-height:1.27;font-weight:600;color:#F1F1F1}
+.home-hero p{margin:26px auto 0;max-width:490px;color:#F1F1F1}
+.home-hero .btn{margin-top:56px}
+.prob-grid{display:grid;grid-template-columns:minmax(0,1fr) 200px minmax(0,1fr);gap:56px;align-items:center;max-width:1140px;margin:64px auto 0;text-align:left}
+.prob-grid .mid{display:flex;justify-content:center}
+.prob-grid .mid svg{width:150px;height:226px}
+.prob-q{margin:72px auto 0;font-size:24px;line-height:1.35;font-weight:600;color:#FF7803}
+.prob-c{margin:20px auto 0;max-width:760px;font-size:24px;line-height:1.4;font-weight:400;color:#F1F1F1}
+.prob-c strong{color:#FF7803;font-weight:600}
+.prob-btn{margin-top:44px}
+.quienes{min-height:720px;justify-content:flex-start;text-align:left}
+.quienes::before{background:rgba(0,0,0,.73)}
+.quienes .box{max-width:620px;margin-left:max(0px,calc((100% - 1140px) / 2))}
+.quienes h3{margin:0 0 32px;font-size:44px;line-height:1.2;font-weight:600;color:#FF7803}
+.quienes .btn{margin-top:40px}
+.sols{padding:120px 32px;text-align:center}
+.sols h2{margin:0;font-size:44px;line-height:1.2;font-weight:600;color:#F1F1F1}
+.sols .lead{margin:20px auto 0;max-width:640px;font-size:18px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;max-width:1240px;margin:64px auto 0;text-align:left}
+.card{display:flex;flex-direction:column;background:#FFFFFF;color:#222222;border-radius:23px;padding:32px 28px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(255,120,3,.18)}
+.card h3{margin:0;font-size:21px;line-height:1.3;font-weight:600;color:#222222}
+.card .by{margin-top:10px;font-size:15px;color:#B85300;font-weight:500}
+.card p{margin-top:18px;font-size:15px;line-height:1.5;color:#333333}
+.card p.hl{font-weight:600;color:#222222}
+.card .btn{margin-top:auto;align-self:flex-start}
+.card .sp{flex:1;min-height:24px}
+.fit{background:#F1F1F1;color:#000000;padding:110px 32px;text-align:center}
+.fit .st{color:#111111}
+.fit .bicon2{display:block;width:44px;height:70px;margin:0 auto 40px}
+.fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;max-width:1000px;margin:56px auto 0;text-align:left}
+.fit .kw{color:#111111}
+.fit .btn{margin-top:72px;min-height:66px;padding:0 56px;border-radius:33px;font-size:18px}
+.fit-c{margin:56px auto 0;max-width:720px;font-size:24px;line-height:1.4;color:#111111}
+.fit-c strong{font-weight:700}
+
+@media (max-width:1024px){
+ .nav{display:none}.burger{display:block}
+ .hdr{height:90px;padding:0 32px 0 44px}.hdr .logo{width:29px;height:46px}
+ .hdr.solid{background:transparent}
+ .below{padding-top:0}
+}
+@media (max-width:767px){
+ .wrap{padding:0 36px}
+ .photo{padding:130px 36px 64px}
+ .pt{font-size:32px}.pt.light{font-size:30px;line-height:1.38}
+ .sub{margin-top:22px;font-size:16px}.sub.strong{font-size:17px}
+ .bsec{padding:40px 36px 64px}
+ .bicon{width:32px;height:50px;margin-bottom:28px}
+ .st{font-size:24px}
+ .intro{font-size:15px;margin-top:24px}
+ .kw{font-size:14px;line-height:1.45}
+ .prose p{font-size:15px}
+ .f-cols{grid-template-columns:1fr;gap:40px;padding:0 36px}
+ .copy{padding:40px 36px 32px}
+ .social{gap:48px;margin-bottom:40px}
+ .todo-wrap{padding:0 36px 64px}
+}
+
+@media (max-width:1200px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.prob-grid{grid-template-columns:1fr;gap:32px}.prob-grid .mid{display:none}.fit-grid{grid-template-columns:1fr;gap:24px}}
+@media (max-width:767px){
+ .home-hero{min-height:0;padding:130px 36px 66px}
+ .home-hero .hb{left:14%;top:146px;margin-top:0;width:41px;height:62px}
+ .home-hero h1{font-size:30px}
+ .home-hero p{margin-top:40px;font-size:15px}
+ .home-hero .btn{margin-top:22px}
+ .prob-q,.prob-c,.fit-c{font-size:18px}
+ .quienes{min-height:0}.quienes h3{font-size:30px}
+ .sols{padding:72px 36px}.sols h2{font-size:30px}.cards{grid-template-columns:1fr}
+ .fit{padding:72px 36px}
+}
+</style>
+</helmet>
+<div class="ww">
+<header class="hdr">
+<a class="logo" href="Main.dc.html" aria-label="Word Works, inicio"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></a>
+<nav aria-label="Principal"><ul class="nav"><li class="has-sub"><button type="button" class="nl" aria-haspopup="true"><span class="lbl">Quiénes somos</span><span class="caret"></span></button><ul class="dd"><li><a href="NuestraHistoria.dc.html" class="">Nuestra historia</a></li><li><a href="Calidad.dc.html" class="">Calidad</a></li><li><a href="Equipo.dc.html" class="">Equipo</a></li></ul></li><li class="has-sub"><button type="button" class="nl" aria-haspopup="true"><span class="lbl">Soluciones</span><span class="caret"></span></button><ul class="dd"><li><a href="GlobalReadiness.dc.html" class="">Global Readiness</a></li><li><a href="AIContent.dc.html" class="">AI Content Creation</a></li><li><a href="TeamReadiness.dc.html" class="">Team Readiness</a></li><li><a href="SolucionesLinguisticas.dc.html" class="">Soluciones lingüísticas</a></li></ul></li><li class="has-sub"><button type="button" class="nl" aria-haspopup="true"><span class="lbl">Recursos</span><span class="caret"></span></button><ul class="dd"><li><a href="Blog.dc.html" class="">Blog</a></li><li><a href="TrabajaConNosotras.dc.html" class="">Trabaja con nosotras</a></li></ul></li><li><a class="nl" href="Contacto.dc.html"><span class="lbl">Contacto</span></a></li></ul></nav>
+<button type="button" class="burger" aria-label="Abrir menú" onClick="{{openMenu}}"><span></span><span></span><span></span></button>
+</header>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+<div class="mm" role="dialog" aria-label="Menú">
+<div class="mm-top"><a class="logo" href="Main.dc.html" aria-label="Word Works, inicio"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></a><button type="button" class="mm-close" aria-label="Cerrar menú" onClick="{{closeMenu}}">×</button></div>
+<div class="mm-grp"><span class="mm-h">Quiénes somos</span><a class="sub" href="NuestraHistoria.dc.html">Nuestra historia</a><a class="sub" href="Calidad.dc.html">Calidad</a><a class="sub" href="Equipo.dc.html">Equipo</a></div><div class="mm-grp"><span class="mm-h">Soluciones</span><a class="sub" href="GlobalReadiness.dc.html">Global Readiness</a><a class="sub" href="AIContent.dc.html">AI Content Creation</a><a class="sub" href="TeamReadiness.dc.html">Team Readiness</a><a class="sub" href="SolucionesLinguisticas.dc.html">Soluciones lingüísticas</a></div><div class="mm-grp"><span class="mm-h">Recursos</span><a class="sub" href="Blog.dc.html">Blog</a><a class="sub" href="TrabajaConNosotras.dc.html">Trabaja con nosotras</a></div><div class="mm-grp"><a class="mm-h" href="Contacto.dc.html">Contacto</a></div>
+</div>
+</sc-if>
+<main class="">
+
+<section class="home-hero">
+<svg class="hb load-fade" viewBox="0 0 120 180" aria-hidden="true"><path fill="none" stroke="#E7780F" stroke-width="3" stroke-linejoin="round" d="M48 3C24 3 4 22 4 47V133C4 158 24 177 48 177C68 177 82 166 86 150L114 146C102 139 94 128 92 116V47C92 22 72 3 48 3Z"></path></svg>
+<div class="inner">
+<h1 class="load">Comunicación que conecta</h1>
+<p class="load load-2">Comunicación, contenido y equipos preparados para crecer en otros mercados</p>
+<a class="btn load load-3" href="Contacto.dc.html">¿Quieres saber más?</a>
+</div>
+</section>
+
+<section class="bsec">
+<svg class="bicon reveal" viewBox="0 0 120 180" aria-hidden="true"><path fill="none" stroke="#FF7803" stroke-width="4" stroke-linejoin="round" d="M48 3C24 3 4 22 4 47V133C4 158 24 177 48 177C68 177 82 166 86 150L114 146C102 139 94 128 92 116V47C92 22 72 3 48 3Z"></path></svg>
+<h2 class="st reveal"><span class="st-block">Mercados distintos requieren</span><span class="st-block accent">Decisiones distintas.</span></h2>
+<div class="prob-grid">
+<ul class="kw reveal">
+<li>Reutilizas el <strong>mismo mensaje</strong> en <strong>países</strong> con expectativas y formas de comprar <strong>diferentes</strong>.</li>
+<li>Cada equipo, distribuidor o proveedor <strong>adapta los materiales con sus propios criterios</strong>.</li>
+<li>Marketing y Ventas <strong>no comparten directrices claras</strong> sobre qué materiales mantener y cuáles adaptar.</li>
+</ul>
+<div class="mid reveal"><svg class="" viewBox="0 0 120 180" aria-hidden="true"><path fill="none" stroke="#E7780F" stroke-width="3" stroke-linejoin="round" d="M48 3C24 3 4 22 4 47V133C4 158 24 177 48 177C68 177 82 166 86 150L114 146C102 139 94 128 92 116V47C92 22 72 3 48 3Z"></path></svg></div>
+<ul class="kw reveal">
+<li>Recurres a la IA para acelerar la producción, lo que acaba resultando en la <strong>pérdida del control editorial</strong>.</li>
+<li>Los materiales explican el producto, de una forma correcta, pero <strong>sin</strong> hacer énfasis en su <strong>valor para el mercado de destino</strong>.</li>
+<li>El ritmo frenético y los plazos ajustados obligan a <strong>generar contenido antes de validar el estilo, el contexto o la utilidad comercial</strong>.</li>
+</ul>
+</div>
+<h3 class="prob-q reveal">¿Tu empresa se enfrenta a alguno de estos problemas?</h3>
+<h3 class="prob-c reveal">La expansión internacional empieza por entender cómo te van a entender. Con esa base, cada decisión suma <strong>claridad y coherencia.</strong></h3>
+<a class="btn prob-btn reveal" href="#nuestras-soluciones">Te contamos más</a>
+</section>
+
+<section class="photo ph-quienes quienes">
+<div class="box reveal">
+<h3>Quiénes somos</h3>
+<div class="prose">
+<p>En Word Works ayudamos a empresas a comunicar, producir contenido y preparar equipos para crecer en otros mercados.</p>
+<p>Antes de trasladar un mensaje, analizamos el contexto.: definimos qué debe mantenerse, qué necesita adaptarse y sentamos las bases que permitirán trabajar con coherencia entre países, canales y equipos.</p>
+<p>Hoy combinamos <strong>nuestra experiencia de más de 35 años en el sector de la comunicación y en el ámbito de la gestión de proyectos</strong> con el análisis de mercado, nuevos procesos estructurados y el uso de tecnología aplicada con supervisión profesional</p>
+</div>
+<a class="btn" href="NuestraHistoria.dc.html">Conócenos mejor</a>
+</div>
+<span class="ph-label">Foto: quienes-somos-2.png</span>
+</section>
+
+<section class="sols" id="nuestras-soluciones">
+<h2 class="reveal">Nuestras soluciones</h2>
+<p class="lead reveal">Cuatro soluciones para preparar, ejecutar y sostener tu comunicación internacional.</p>
+<div class="cards">
+<article class="card reveal">
+<h3>Diagnóstico de Comunicación Internacional</h3>
+<p class="by"><em>Global Readiness by</em> Word Works</p>
+<p>A través del análisis del contenido y del posicionamiento de tu empresa, evaluamos qué necesitáis para que vuestro mensaje funcione en un mercado concreto.</p>
+<p class="hl">Más claridad, menos riesgo y prioridades accionables.</p>
+<div class="sp"></div><a class="btn btn-sm" href="GlobalReadiness.dc.html">Saber más</a>
+</article>
+<article class="card reveal">
+<h3>Diagnóstico del Equipo para la Internacionalización</h3>
+<p class="by"><em>Team Readiness by</em> Word Works</p>
+<p>¿Quieres saber si tu equipo cuenta con las sus aptitudes y los perfiles adecuados para sostener la entrada o el crecimiento en otro mercado?</p>
+<p class="hl">Te ayudamos a tomar decisiones sobre formación, contrataciones, reorganización de los equipos o subcontratación de apoyo externo.</p>
+<div class="sp"></div><a class="btn btn-sm" href="TeamReadiness.dc.html">Saber más</a>
+</article>
+<article class="card reveal">
+<h3>Generación de contenido IA</h3>
+<p>Nos apoyamos en la IA para generar contenido que posteriormente revisan lingüistas profesionales desde la perspectiva de la adaptación cultural y sin perder de vista el mercado de destino, el canal de comunicación y el objetivo.</p>
+<p class="hl">Más velocidad y volumen sin perder estilo, utilidad ni control.</p>
+<div class="sp"></div><a class="btn btn-sm" href="AIContent.dc.html">Saber más</a>
+</article>
+<article class="card reveal">
+<h3>Soluciones lingüísticas</h3>
+<p>Traducimos, revisamos y localizamos contenido técnico, comercial y corporativo con especialistas por sector, idioma y mercado de destino.</p>
+<p class="hl">Precisión, coherencia terminológica y los más altos estándares de calidad de la mano de lingüistas profesionales en la combinación de idiomas que necesites por sector, idioma y mercado de destino.</p>
+<div class="sp"></div><a class="btn btn-sm" href="SolucionesLinguisticas.dc.html">Saber más</a>
+</article>
+</div>
+</section>
+
+<section class="fit">
+<div class="bicon2 reveal"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></div>
+<h2 class="st reveal">Si te suena esto, <span class="accent">encajamos.</span></h2>
+<div class="fit-grid">
+<ul class="kw reveal">
+<li>Vas a entrar en un mercado nuevo y <strong>aún no sabes qué mensaje llevar</strong>.</li>
+<li>Ya operas fuera, pero algunos mercados <strong>no avanzan como esperabas</strong>.</li>
+<li>Quieres <strong>tener más información para decidir antes de invertir</strong> en campañas, creación de contenidos o contrataciones.</li>
+</ul>
+<ul class="kw reveal">
+<li>Marketing necesita producir más contenido <strong>sin perder el estilo de la marca</strong>.</li>
+<li>Cada equipo, departamento o filial <strong>comunica con criterios distintos</strong>.</li>
+<li>El crecimiento depende de pocas personas o de aptitudes que todavía faltan.</li>
+<li><strong>Sabes que hay un problema</strong>, pero no tienes claro dónde está.</li>
+</ul>
+</div>
+<h3 class="fit-c reveal"><strong>Comunicación que ayuda a crecer.</strong> Un método claro para preparar y mejorar tu presencia en cada mercado.</h3>
+<a class="btn reveal" href="Contacto.dc.html">Contáctanos</a>
+</section>
+
+</main>
+<footer class="ftr">
+<div class="f-cols">
+<div>
+<p class="f-tag">Estamos aquí para ayudarte a comunicar mejor.</p>
+<div class="social">
+<a href="https://www.instagram.com/wordworks_sl" aria-label="Instagram de Word Works"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.6"></circle><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+<a href="https://www.linkedin.com/company/word-works-s-l-/" aria-label="LinkedIn de Word Works"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2.5" y="8.5" width="4.4" height="13"></rect><circle cx="4.7" cy="4.4" r="2.5"></circle><path d="M9.6 8.5h4.2v1.9c.7-1.2 2.2-2.2 4.4-2.2 4 0 4.7 2.6 4.7 6V21.5h-4.4v-6.4c0-1.6-.1-3.4-2.2-3.4-2.2 0-2.5 1.6-2.5 3.3v6.5H9.6Z"></path></svg></a>
+</div>
+<h5>Contacto</h5>
+<div class="f-contact"><a href="mailto:info@wordworks.es">info@wordworks.es</a><a href="tel:+34916403738">+34 916 403 738</a></div>
+</div>
+<div><h5>Navegación</h5><ul class="f-links"><li><a href="Blog.dc.html">Blog</a></li><li><a href="TrabajaConNosotras.dc.html">Trabaja con nosotras</a></li><li><a href="FAQ.dc.html">FAQs</a></li><li><a href="Contacto.dc.html">Contacto</a></li></ul></div>
+<div><h5>Legal</h5><ul class="f-links"><li><a class="b" href="AvisoLegal.dc.html">Aviso legal</a></li><li><a class="b" href="Privacidad.dc.html">Política de privacidad</a></li><li><a href="Cookies.dc.html">Política de <em>cookies</em></a></li></ul></div>
+</div>
+<p class="copy f-in">© 2026. Reservados todos los derechos.</p>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const open = !!(this.state && this.state.menuOpen);
+    return {
+      menuOpen: open,
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

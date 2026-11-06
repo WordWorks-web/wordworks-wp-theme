@@ -1,0 +1,15 @@
+/*
+Theme Name: Word Works
+Theme URI: https://wordworks.es
+Author: Word Works
+Description: Tema de bloques de Word Works. Reproduce wordworks.es página a página (cabecera, pie, patrones de cada página, animaciones al hacer scroll) y es editable desde el Editor del sitio.
+Requires at least: 6.9
+Tested up to: 7.0
+Requires PHP: 7.4
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wordworks
+*/
+
+/* Los estilos del sitio están en assets/css/site.css (se cargan en el front y en el editor). */

@@ -1,0 +1,601 @@
+{
+	"pages": [
+		{
+			"key": "home",
+			"title": "Inicio",
+			"slug": "",
+			"template": "",
+			"pattern": "wordworks/page-home",
+			"posts_page": false,
+			"front_page": true,
+			"section": null
+		},
+		{
+			"key": "nuestra-historia",
+			"title": "Nuestra historia",
+			"slug": "nuestra-historia",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-nuestra-historia",
+			"posts_page": false,
+			"front_page": false,
+			"section": "Quiénes somos"
+		},
+		{
+			"key": "calidad",
+			"title": "Calidad",
+			"slug": "calidad",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-calidad",
+			"posts_page": false,
+			"front_page": false,
+			"section": "Quiénes somos"
+		},
+		{
+			"key": "equipo",
+			"title": "Equipo",
+			"slug": "equipo",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-equipo",
+			"posts_page": false,
+			"front_page": false,
+			"section": "Quiénes somos"
+		},
+		{
+			"key": "global-readiness",
+			"title": "Global Readiness",
+			"slug": "global-readiness",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-global-readiness",
+			"posts_page": false,
+			"front_page": false,
+			"section": "Soluciones"
+		},
+		{
+			"key": "ai-content-creation",
+			"title": "AI Content Creation",
+			"slug": "ai-content-creation",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-ai-content-creation",
+			"posts_page": false,
+			"front_page": false,
+			"section": "Soluciones"
+		},
+		{
+			"key": "team-readiness",
+			"title": "Team Readiness",
+			"slug": "team-readiness",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-team-readiness",
+			"posts_page": false,
+			"front_page": false,
+			"section": "Soluciones"
+		},
+		{
+			"key": "soluciones-linguisticas",
+			"title": "Soluciones lingüísticas",
+			"slug": "soluciones-linguisticas",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-soluciones-linguisticas",
+			"posts_page": false,
+			"front_page": false,
+			"section": "Soluciones"
+		},
+		{
+			"key": "blog",
+			"title": "Blog",
+			"slug": "blog",
+			"template": "",
+			"pattern": null,
+			"posts_page": true,
+			"front_page": false,
+			"section": "Recursos"
+		},
+		{
+			"key": "trabaja-con-nosotras",
+			"title": "Trabaja con nosotras",
+			"slug": "trabaja-con-nosotras",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-trabaja-con-nosotras",
+			"posts_page": false,
+			"front_page": false,
+			"section": "Recursos"
+		},
+		{
+			"key": "contacto",
+			"title": "Contacto",
+			"slug": "contacto",
+			"template": "page-solid-header",
+			"pattern": "wordworks/page-contacto",
+			"posts_page": false,
+			"front_page": false,
+			"section": null
+		},
+		{
+			"key": "faq",
+			"title": "FAQ",
+			"slug": "faq",
+			"template": "",
+			"pattern": "wordworks/page-faq",
+			"posts_page": false,
+			"front_page": false,
+			"section": null
+		},
+		{
+			"key": "aviso-legal",
+			"title": "Aviso legal",
+			"slug": "aviso-legal",
+			"template": "",
+			"pattern": "wordworks/page-aviso-legal",
+			"posts_page": false,
+			"front_page": false,
+			"section": null
+		},
+		{
+			"key": "politica-de-privacidad",
+			"title": "Política de privacidad",
+			"slug": "politica-de-privacidad",
+			"template": "",
+			"pattern": "wordworks/page-politica-de-privacidad",
+			"posts_page": false,
+			"front_page": false,
+			"section": null
+		},
+		{
+			"key": "politica-de-cookies",
+			"title": "Política de cookies",
+			"slug": "politica-de-cookies",
+			"template": "",
+			"pattern": "wordworks/page-politica-de-cookies",
+			"posts_page": false,
+			"front_page": false,
+			"section": null
+		}
+	],
+	"images": [
+		{
+			"file": "quienes-somos-2.png",
+			"search": null,
+			"pages": [
+				"home"
+			],
+			"labels": [
+				"Foto: quienes-somos-2.png"
+			]
+		},
+		{
+			"file": "logo-antiguo",
+			"search": [
+				"logo-antiguo",
+				"logo_antiguo",
+				"antiguo"
+			],
+			"pages": [
+				"nuestra-historia"
+			],
+			"labels": [
+				"Imagen: logo antiguo"
+			]
+		},
+		{
+			"file": "primer-logo",
+			"search": [
+				"primer-logo",
+				"primer_logo",
+				"primerlogo"
+			],
+			"pages": [
+				"nuestra-historia"
+			],
+			"labels": [
+				"Imagen: primer logo"
+			]
+		},
+		{
+			"file": "logo-actual",
+			"search": [
+				"logo-actual",
+				"logo_actual",
+				"logo-ww",
+				"logo-word-works"
+			],
+			"pages": [
+				"nuestra-historia"
+			],
+			"labels": [
+				"Imagen: logo actual"
+			]
+		},
+		{
+			"file": "foto-escriba-2.jpg",
+			"search": null,
+			"pages": [
+				"nuestra-historia"
+			],
+			"labels": [
+				"Foto: foto-escriba-2.jpg"
+			]
+		},
+		{
+			"file": "legrand",
+			"search": [
+				"legrand"
+			],
+			"pages": [
+				"nuestra-historia"
+			],
+			"labels": [
+				"Logo Legrand"
+			]
+		},
+		{
+			"file": "comansa",
+			"search": [
+				"comansa"
+			],
+			"pages": [
+				"nuestra-historia"
+			],
+			"labels": [
+				"Logo Comansa"
+			]
+		},
+		{
+			"file": "reading-assignment.jpg",
+			"search": null,
+			"pages": [
+				"calidad"
+			],
+			"labels": [
+				"Hero: dos mujeres revisando documentos en oficina, overlay oscuro (reading-assignment.jpg)"
+			]
+		},
+		{
+			"file": "bocadillona03.png",
+			"search": null,
+			"pages": [
+				"calidad"
+			],
+			"labels": [
+				"Bocadillo decorativo naranja (bocadillona03.png), 768×746"
+			]
+		},
+		{
+			"file": "sellos-no-traducción.png",
+			"search": null,
+			"pages": [
+				"calidad"
+			],
+			"labels": [
+				"Sellos de certificación ISO 9001 e ISO 13485 (sellos-no-traducción.png), 768×691"
+			]
+		},
+		{
+			"file": "sellos-traducción.png",
+			"search": null,
+			"pages": [
+				"calidad"
+			],
+			"labels": [
+				"Sellos de certificación ISO 17100 e ISO 18587 (sellos-traducción.png), 768×741"
+			]
+		},
+		{
+			"file": "equipo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Hero: equipo reunido en sala a contraluz, tono cálido (equipo.png)"
+			]
+		},
+		{
+			"file": "luis-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Luis Mª Revilla Alayza (luis-trazo.png)"
+			]
+		},
+		{
+			"file": "carmen-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Carmen Yates Martínez (carmen-trazo.png)"
+			]
+		},
+		{
+			"file": "trilce-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Trilce Revilla-Yates (trilce-trazo.png)"
+			]
+		},
+		{
+			"file": "eva-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Eva Revilla-Yates (eva-trazo.png)"
+			]
+		},
+		{
+			"file": "daniela-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Daniela Losa (daniela-trazo.png)"
+			]
+		},
+		{
+			"file": "lara-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Lara Eleno (lara-trazo.png)"
+			]
+		},
+		{
+			"file": "soraya-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Soraya de la Fuente (soraya-trazo.png)"
+			]
+		},
+		{
+			"file": "massi-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Massi Pellegrino (massi-trazo.png)"
+			]
+		},
+		{
+			"file": "irene-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Irene de Andrés (irene-trazo.png)"
+			]
+		},
+		{
+			"file": "mónica-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Mónica Alía (mónica-trazo.png)"
+			]
+		},
+		{
+			"file": "maría-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: María Martagón (maría-trazo.png)"
+			]
+		},
+		{
+			"file": "isa-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Isabel Anguita (isa-trazo.png)"
+			]
+		},
+		{
+			"file": "rosa-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Rosa Medina (rosa-trazo.png)"
+			]
+		},
+		{
+			"file": "bartolomé-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Bartolomé Piña (bartolomé-trazo.png)"
+			]
+		},
+		{
+			"file": "laura-trazo.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Retrato con trazo naranja: Laura Herrero (laura-trazo.png)"
+			]
+		},
+		{
+			"file": "logo-pared.png",
+			"search": null,
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Fondo: personas junto a una mesa con portátil, logo en la pared (logo-pared.png)"
+			]
+		},
+		{
+			"file": "majorica",
+			"search": [
+				"majorica"
+			],
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Logo Majorica"
+			]
+		},
+		{
+			"file": "emuge-franken",
+			"search": [
+				"emuge",
+				"franken"
+			],
+			"pages": [
+				"equipo"
+			],
+			"labels": [
+				"Logo Emuge Franken"
+			]
+		},
+		{
+			"file": "imagen-web-para-oscurecer-1.png",
+			"search": null,
+			"pages": [
+				"global-readiness"
+			],
+			"labels": [
+				"Hero: reunión de trabajo, mujer sonriendo, overlay oscuro (imagen-web-para-oscurecer-1.png)"
+			]
+		},
+		{
+			"file": "soluciones5_gr.png",
+			"search": null,
+			"pages": [
+				"global-readiness"
+			],
+			"labels": [
+				"Fondo: equipo trabajando en oficina, overlay oscuro (soluciones5_gr.png)"
+			]
+		},
+		{
+			"file": "foto-oficina-2.jpg",
+			"search": null,
+			"pages": [
+				"global-readiness",
+				"ai-content-creation",
+				"team-readiness",
+				"soluciones-linguisticas"
+			],
+			"labels": [
+				"Fondo: oficina (foto-oficina-2.jpg), overlay oscuro"
+			]
+		},
+		{
+			"file": "quienes-somos-1.png",
+			"search": null,
+			"pages": [
+				"ai-content-creation"
+			],
+			"labels": [
+				"Hero: mujer sonriendo leyendo documentos, luz cálida, overlay oscuro (quienes-somos-1.png)"
+			]
+		},
+		{
+			"file": "soluciones8.png",
+			"search": null,
+			"pages": [
+				"ai-content-creation"
+			],
+			"labels": [
+				"Fondo: equipo de contenido trabajando (soluciones8.png), overlay oscuro"
+			]
+		},
+		{
+			"file": "10.png",
+			"search": null,
+			"pages": [
+				"team-readiness"
+			],
+			"labels": [
+				"Hero: reunión entre compañeras alrededor de una mesa, overlay (10.png)"
+			]
+		},
+		{
+			"file": "12.png",
+			"search": null,
+			"pages": [
+				"team-readiness"
+			],
+			"labels": [
+				"Fondo: equipo en reunión (12.png), overlay oscuro"
+			]
+		},
+		{
+			"file": "hero-soluciones2.png",
+			"search": null,
+			"pages": [
+				"soluciones-linguisticas"
+			],
+			"labels": [
+				"Hero: cuatro profesionales conversando en oficina, luz cálida (hero-soluciones2.png)"
+			]
+		},
+		{
+			"file": "diferencia_lingüístico.png",
+			"search": null,
+			"pages": [
+				"soluciones-linguisticas"
+			],
+			"labels": [
+				"Fondo: profesional trabajando con documentos (diferencia_lingüístico.png), overlay oscuro"
+			]
+		},
+		{
+			"file": "quienes-somos-3.png",
+			"search": null,
+			"pages": [
+				"trabaja-con-nosotras"
+			],
+			"labels": [
+				"Hero: dos profesionales frente a una pantalla, luces desenfocadas (quienes-somos-3.png)"
+			]
+		},
+		{
+			"file": "soluciones6_trad.png",
+			"search": null,
+			"pages": [
+				"contacto"
+			],
+			"labels": [
+				"Fondo: mujer con gafas trabajando en portátil, reflejos y bokeh (soluciones6_trad.png)"
+			]
+		},
+		{
+			"file": "generated.png",
+			"search": null,
+			"pages": [
+				"faq"
+			],
+			"labels": [
+				"Hero: mujer con auriculares trabajando frente al ordenador (generated.png)"
+			]
+		}
+	]
+}

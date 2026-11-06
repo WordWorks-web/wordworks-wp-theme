@@ -1,0 +1,693 @@
+/* ==== Design CSS (merged from design/*.dc.html by tools/build_css.py; do not edit) ==== */
+
+/* ---- shared base ---- */
+*,*::before,*::after{box-sizing:border-box}
+.ww{position:relative;background:#000000;color:#FFFFFF;font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.ww p{margin:0}
+.ww :focus-visible{outline:2px solid #FF7803;outline-offset:3px}
+.accent{color:#FF7803}
+.hdr{position:absolute;top:0;left:0;right:0;z-index:20;height:74px;display:flex;align-items:center;padding:0 max(32px,calc((100% - 1040px) / 2))}
+.logo{display:block;width:38px;height:60px;flex:none}
+.logo svg{display:block;width:100%;height:100%}
+.btn,.wp-block-button__link{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:28px;background:#FF7803;color:#FFFFFF;font-size:17px;font-weight:400;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background .15s,transform .15s}
+.btn:hover,.wp-block-button__link:hover{background:#E86C00;color:#FFFFFF;transform:translateY(-1px)}
+.btn.btn-sm,.btn-sm>.wp-block-button__link{min-height:48px;padding:0 24px;font-size:16px;border-radius:24px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+.narrow{max-width:606px;margin:0 auto}
+.prose p{text-align:justify}
+.prose p+p{margin-top:28px}
+.photo{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 32px;overflow:hidden;min-height:0}
+.photo::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:1}
+.photo>.wp-block-cover__inner-container>*{position:relative;z-index:2}
+.hero-c{max-width:780px}
+.pt{margin:0;font-size:56px;line-height:1.2;font-weight:600;color:#FF7803}
+.pt .w{color:#F1F1F1}
+.pt.light{font-weight:400;font-size:62px;line-height:1.35}
+.sub{margin-top:28px;font-size:22px;line-height:1.4}
+.sub.strong{font-weight:600;font-size:24px}
+.ph-calidad{background:linear-gradient(100deg,#2f3438 0%,#5b6166 40%,#8a8f93 68%,#4b5054 100%)}
+.ph-equipo{background:radial-gradient(ellipse 60% 70% at 58% 8%,#e2a457 0%,#8a5222 28%,#2a1c12 62%,#140e0a 100%)}
+.ph-global{background:radial-gradient(ellipse at 50% 25%,#5a4a3e 0%,#2a2420 50%,#151311 100%)}
+.ph-ai{background:radial-gradient(circle at 88% 28%,rgba(255,190,110,.38) 0 4%,transparent 5.5%),radial-gradient(ellipse at 32% 35%,#6b5a48 0%,#2b2722 45%,#141312 100%)}
+.ph-team{background:linear-gradient(110deg,#57544f 0%,#8b8781 45%,#a09a92 60%,#6d6a66 100%)}
+.ph-ling{background:radial-gradient(ellipse at 50% 45%,#7a5232 0%,#3a281a 50%,#1c140e 100%)}
+.ph-red{background:radial-gradient(circle at 12% 18%,rgba(230,90,60,.45) 0 6%,transparent 12%),radial-gradient(circle at 40% 85%,rgba(60,110,200,.45) 0 6%,transparent 13%),radial-gradient(circle at 92% 60%,rgba(255,140,60,.45) 0 6%,transparent 12%),#15161a}
+.ph-contact{background:radial-gradient(circle at 60% 33%,rgba(255,170,110,.35) 0 3%,transparent 4%),linear-gradient(180deg,#3f464c 0%,#4b4e50 62%,#5a4632 100%)}
+.ph-faq{background:linear-gradient(100deg,#2c3238 0%,#4a525a 52%,#2f353b 100%)}
+.ph-quienes{background:radial-gradient(ellipse at 70% 40%,#4a4038 0%,#26211d 55%,#141110 100%)}
+.ph-bokeh{background:radial-gradient(circle at 8% 15%,rgba(255,140,40,.75) 0 7%,transparent 7.6%),radial-gradient(circle at 37% 30%,rgba(255,140,40,.7) 0 6%,transparent 6.6%),radial-gradient(circle at 58% 18%,rgba(255,150,60,.75) 0 5%,transparent 5.6%),radial-gradient(circle at 80% 25%,rgba(70,150,220,.45) 0 12%,transparent 22%),#0d1622}
+.bsec{padding:120px 32px;text-align:center}
+.bicon{display:block;width:46px;height:78px;margin:0 auto 44px}
+.st{margin:0 auto;max-width:900px;font-size:32px;line-height:1.3;font-weight:500;text-transform:uppercase;color:#F1F1F1}
+.st-block{display:block}
+.intro{max-width:760px;margin:40px auto 0;font-size:17px;line-height:1.55;text-align:justify}
+.intro.c{text-align:center}
+.kw{margin:0;padding:0 0 0 24px;text-align:left;font-size:17px;line-height:1.55}
+.kw li+li{margin-top:24px}
+.kw strong{font-weight:700}
+.f-bubble{display:flex;justify-content:center;padding:56px 32px 110px}
+.f-bubble svg{width:110px;height:177px}
+.ftr{padding-top:48px}
+.f-cols{display:grid;grid-template-columns:39% 25% 1fr;max-width:1040px;margin:0 auto;padding:0 32px;box-sizing:content-box}
+.f-in{max-width:1040px;margin:0 auto;box-sizing:content-box}
+.f-cols h5{margin:0 0 18px;font-size:26px;line-height:1.2;font-weight:600;color:#FFFFFF}
+.f-tag{max-width:300px;font-size:14px;line-height:1.3}
+.social{display:flex;gap:100px;margin:24px 0 52px}
+.social a{display:block;width:26px;height:26px;color:#FF7803}
+.social svg{display:block;width:100%;height:100%}
+.f-contact a{display:block;margin-bottom:12px;font-size:16px;text-underline-offset:3px}
+.f-links{margin:0;padding:0;list-style:none}
+.f-links li+li{margin-top:12px}
+.f-links a{font-size:14px;text-underline-offset:3px}
+.f-links .b{font-weight:600}
+.copy{padding:56px 32px 26px;font-size:14px}
+.form{display:grid;gap:24px}
+.field label{display:block;margin-bottom:8px;font-size:16px;color:#F1F1F1}
+.field input,.field textarea{width:100%;height:48px;padding:0 16px;background:#F1F1F1;color:#111111;border:0;border-radius:0;font:400 16px/1.4 Montserrat,Arial,sans-serif}
+.field textarea{height:96px;padding:12px 16px;resize:vertical}
+.field ::placeholder{color:#6E6E6E}
+.form.rounded .field input,.form.rounded .field textarea{height:52px;border:1px solid #C8C8C8;border-radius:12px}
+.form.rounded .field textarea{height:96px}
+
+/* ---- Main ---- */
+.home-hero{position:relative;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 32px 90px;overflow:hidden;background:linear-gradient(118deg,#141414 0%,#1C1C1C 30%,#232323 46%,#6B3E17 56%,#C8600E 63%,#FF7803 71%,#FC831B 76%,#FAB57E 88%,#F7F4EF 100%)}
+.home-hero .hb{position:absolute;left:9.3%;top:50%;width:222px;height:337px;margin-top:-150px}
+.home-hero .inner{position:relative;max-width:660px}
+.home-hero h1{margin:0;font-size:64px;line-height:1.27;font-weight:600;color:#F1F1F1}
+.home-hero p{margin:26px auto 0;max-width:490px;color:#F1F1F1}
+.home-hero .btn,.home-hero  .wp-block-buttons{margin-top:56px}
+.prob-grid{display:grid;grid-template-columns:minmax(0,1fr) 200px minmax(0,1fr);gap:56px;align-items:center;max-width:1140px;margin:64px auto 0;text-align:left}
+.prob-grid .mid{display:flex;justify-content:center}
+.prob-grid .mid svg{width:150px;height:226px}
+.prob-q{margin:72px auto 0;font-size:24px;line-height:1.35;font-weight:600;color:#FF7803}
+.prob-c{margin:20px auto 0;max-width:760px;font-size:24px;line-height:1.4;font-weight:400;color:#F1F1F1}
+.prob-c strong{color:#FF7803;font-weight:600}
+.prob-btn{margin-top:44px}
+.quienes{min-height:720px;justify-content:flex-start;text-align:left}
+.quienes::before{background:rgba(0,0,0,.73)}
+.quienes .box{max-width:620px;margin-left:max(0px,calc((100% - 1140px) / 2))}
+.quienes h3{margin:0 0 32px;font-size:44px;line-height:1.2;font-weight:600;color:#FF7803}
+.quienes .btn,.quienes  .wp-block-buttons{margin-top:40px}
+.sols{padding:120px 32px;text-align:center}
+.sols h2{margin:0;font-size:44px;line-height:1.2;font-weight:600;color:#F1F1F1}
+.sols .lead{margin:20px auto 0;max-width:640px;font-size:18px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;max-width:1240px;margin:64px auto 0;text-align:left}
+.card{display:flex;flex-direction:column;background:#FFFFFF;color:#222222;border-radius:23px;padding:32px 28px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(255,120,3,.18)}
+.card h3{margin:0;font-size:21px;line-height:1.3;font-weight:600;color:#222222}
+.card .by{margin-top:10px;font-size:15px;color:#B85300;font-weight:500}
+.card p{margin-top:18px;font-size:15px;line-height:1.5;color:#333333}
+.card p.hl{font-weight:600;color:#222222}
+.card .btn,.card  .wp-block-buttons{margin-top:auto;align-self:flex-start}
+.card .sp{flex:1;min-height:24px}
+.fit{background:#F1F1F1;color:#000000;padding:110px 32px;text-align:center}
+.fit .st{color:#111111}
+.fit .bicon2{display:block;width:44px;height:70px;margin:0 auto 40px}
+.fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;max-width:1000px;margin:56px auto 0;text-align:left}
+.fit .kw{color:#111111}
+.fit .btn,.fit  .wp-block-buttons{margin-top:72px}
+.fit-c{margin:56px auto 0;max-width:720px;font-size:24px;line-height:1.4;color:#111111}
+.fit-c strong{font-weight:700}
+
+/* ---- NuestraHistoria ---- */
+.mvv{background:#F1F1F1;color:#111111;padding:110px 32px}
+.mvv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px;max-width:1140px;margin:0 auto}
+.mvv h3{margin:0 0 24px;font-size:32px;line-height:1.2;font-weight:600;color:#111111}
+.mvv h3::after{content:"";display:block;width:48px;height:3px;margin-top:14px;background:#FF7803}
+.mvv p{text-align:justify;font-size:16px;line-height:1.55}
+.mvv p+p{margin-top:20px}
+.mvv .kw{padding-left:20px;font-size:16px;text-align:justify}
+.mvv .kw li+li{margin-top:20px}
+.story{padding:120px 0}
+.story-h{margin:0;font-size:56px;line-height:1.2;font-weight:600;color:#FF7803;text-align:center}
+.story-lead{max-width:880px;margin:48px auto 0;font-size:22px;line-height:1.5;font-weight:500;color:#F1F1F1;text-align:center}
+.story-txt{max-width:760px;margin:44px auto 0}
+.logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1000px;margin:80px auto 0}
+.logo-ph{margin:0;text-align:center}
+.img-ph{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;border:1px dashed #555555;border-radius:12px;background:#111111;color:#BDBDBD;font-size:14px}
+.logo-ph figcaption{margin-top:12px;font-size:14px;color:#9A9A9A}
+.ph-testi{background:linear-gradient(180deg,#8fb1d6 0%,#c7d8ea 45%,#d9c38a 100%)}
+.testi{min-height:620px;padding:110px 32px}
+.testi::before{background:rgba(0,0,0,.55)}
+.testi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;max-width:1040px;width:100%}
+.quote{margin:0;padding:40px 36px;border-radius:23px;background:rgba(0,0,0,.6);text-align:left}
+.stars{color:#FF7803;font-size:22px;letter-spacing:4px}
+.q{margin-top:18px;font-size:19px;line-height:1.5;color:#FFFFFF}
+.client{display:flex;align-items:center;gap:16px;margin-top:28px}
+.client-logo{display:flex;align-items:center;justify-content:center;width:96px;height:56px;border:1px dashed #888888;border-radius:8px;color:#D0D0D0;font-size:11px;text-align:center}
+.client cite{font-style:normal;font-weight:600;font-size:15px}
+.intro-pg{padding:140px 32px 120px}
+.intro-pg .pt{font-size:48px;text-align:center;color:#F1F1F1;margin-bottom:46px}
+.stats{display:flex;justify-content:center;gap:48px;margin-top:72px}
+.stat strong{display:block;font-size:44px;line-height:1.15;font-weight:600;color:#F1F1F1}
+.stat .stat-l{display:block;margin-top:4px;color:#9A9A9A}
+.light-band{background:#F1F1F1;color:#222222;padding:72px 32px}
+.txt{padding:130px 32px 100px}
+.h2o{margin:0 0 44px;font-size:32px;line-height:1.3;font-weight:600;color:#FF7803}
+.h2o.c{text-align:center}
+.eq .hero-c{max-width:1140px;width:100%;text-align:left}
+.eq .pt{max-width:520px;margin-bottom:60px}
+.blog-intro{padding:190px 0 64px}
+.blog-intro .pt{margin-bottom:44px}
+.construction{min-height:520px;align-items:flex-end;padding-bottom:0}
+.construction::before{background:rgba(0,0,0,.15)}
+.c-card{width:min(650px,100%);padding:44px 40px 56px;border-radius:48px 48px 0 0;background:rgba(241,241,241,.85);color:#222222}
+.c-card h2{margin:0;font-size:56px;line-height:1.2;font-weight:600;color:#222222}
+.c-card p{margin-top:16px;font-size:20px;line-height:1.4;color:#222222}
+.c-card .btn,.c-card  .wp-block-buttons{margin-top:32px}
+.form-sec{padding:130px 32px 120px}
+.contact{min-height:740px;text-align:left;padding:120px 32px 96px}
+.c-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:9%;width:100%;max-width:1140px;align-items:center}
+.c-info .pt{margin-bottom:28px}
+.c-det{margin-top:52px}
+.c-det+.c-det{margin-top:24px}
+.c-det h3{margin:0 0 2px;font-size:16px;font-weight:700}
+.c-det a{text-decoration:none;font-size:15px}
+.contact .field label{font-size:14px}
+.faq-g{display:grid;grid-template-columns:40% 1fr;gap:60px;max-width:1140px;margin:0 auto;padding:120px 32px}
+.faq-g h2{margin:0;font-size:46px;line-height:1.2;font-weight:500;color:#F1F1F1;white-space:nowrap}
+.faq-g .fb{display:block;width:200px;height:300px;margin-top:100px}
+.qa+.qa{margin-top:48px}
+.qa h3{margin:0 0 16px;font-size:18px;line-height:1.35;font-weight:700;color:#FF7803}
+.simple{padding:190px 32px 60px}
+.simple .pt{margin-bottom:40px}
+
+/* ---- Calidad ---- */
+.iph{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;border:1px dashed #5A5A5A;border-radius:12px;background:#141414;color:#C8C8C8;font-size:14px;line-height:1.4;text-align:center}
+.light .iph,.lt .iph{background:#E4E4E4;border-color:#9A9A9A;color:#333333}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center;max-width:1140px;margin:0 auto}
+.split.rev>:first-child{order:2}
+.sec{padding:110px 32px}
+.lt{background:#F1F1F1;color:#111111}
+.lt .kw,.lt p{color:#111111}
+.h5o{margin:0 0 32px;font-size:32px;line-height:1.25;font-weight:600;color:#FF7803}
+.lt .h5o{color:#111111}
+.lt .h5o .accent{color:#FF7803}
+.note-txt{margin-top:40px;font-size:18px;line-height:1.5;font-weight:500;color:#F1F1F1;text-align:center}
+.cap{max-width:900px;margin:0 auto;text-align:center}
+.h2c{margin:0;font-size:40px;line-height:1.25;font-weight:600;color:#F1F1F1;text-transform:uppercase}
+.h2c .accent{color:#FF7803}
+.lt .h2c{color:#111111}
+.lead{margin-top:28px;font-size:18px;line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:28px;max-width:1140px;margin:56px auto 0}
+.step{padding:32px 28px;border-radius:23px;background:#FFFFFF;color:#222222;text-align:left}
+.step h3,.step h4{margin:0 0 14px;font-size:20px;line-height:1.3;font-weight:600;color:#222222}
+.step p{font-size:15px;line-height:1.55;color:#333333}
+.step .n{display:block;margin-bottom:12px;font-size:28px;font-weight:700;color:#B85300}
+.dark-step{background:#141414;color:#F1F1F1;border:1px solid #2A2A2A}
+.dark-step h3,.dark-step h4{color:#FF7803}
+.dark-step p{color:#E6E6E6}
+.cta-band{padding:110px 32px;text-align:center}
+.cta-band .btn,.cta-band  .wp-block-buttons{margin-top:40px}
+.list-plain{margin:0;padding-left:22px;text-align:left}
+.list-plain li+li{margin-top:16px}
+.legal{max-width:880px;margin:0 auto;padding:190px 32px 110px}
+.legal h1{margin:0 0 48px;font-size:48px;line-height:1.2;font-weight:600;color:#FF7803}
+.legal h2,.legal h3{margin:48px 0 18px;font-size:22px;line-height:1.35;font-weight:600;color:#F1F1F1}
+.legal p,.legal li{text-align:justify;font-size:16px;line-height:1.6}
+.legal p+p{margin-top:18px}
+.legal ul{margin:16px 0;padding-left:24px}
+.legal li+li{margin-top:10px}
+.legal a{text-underline-offset:3px}
+.tbl{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.tbl th,.tbl td{padding:10px 12px;border:1px solid #3A3A3A;text-align:left;vertical-align:top}
+.tbl th{background:#141414;color:#FF7803;font-weight:600}
+.tbl-wrap{overflow-x:auto}
+
+/* ---- Equipo ---- */
+.team{padding:40px 32px 110px}
+.tm-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 28px;max-width:1140px;margin:56px auto 0}
+.tm{margin:0;text-align:center}
+.tm h3{margin:18px 0 4px;font-size:17px;line-height:1.3;font-weight:600;color:#F1F1F1}
+.tm p{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#FF7803}
+.team-end{max-width:760px;margin:72px auto 0;font-size:22px;line-height:1.45;font-weight:500;text-align:center;color:#F1F1F1}
+.team-cta{text-align:center;margin-top:36px}
+@media (max-width:1024px){
+.tm-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:767px){
+.tm-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 18px}
+.team{padding:24px 36px 64px}
+.team-end{font-size:18px}
+}
+
+/* ---- GlobalReadiness ---- */
+.prob-list{max-width:820px;margin:44px auto 0}
+.prob-list .kw li{font-size:18px}
+.prob-p{max-width:820px;margin:28px auto 0;font-size:17px;line-height:1.6;text-align:justify}
+.flag{max-width:820px;margin:36px auto 0;font-size:20px;font-weight:600;color:#FF7803;text-align:left}
+.what{padding:110px 32px}
+.what .cap h2{margin:0;font-size:44px;line-height:1.2;font-weight:600;color:#111111}
+.what .cap h3{margin:20px auto 0;max-width:760px;font-size:20px;line-height:1.45;font-weight:500;color:#333333}
+.cards5{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:28px;max-width:1140px;margin:64px auto 0}
+.sc{display:flex;flex-direction:column;padding:36px 30px;border-radius:23px;background:#FFFFFF;color:#222222;transition:transform .2s,box-shadow .2s}
+.sc:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(255,120,3,.18)}
+.sc .ico{width:40px;height:62px;margin-bottom:22px}
+.sc h3{margin:0;font-size:21px;line-height:1.3;font-weight:600;color:#222222}
+.sc h4{margin:12px 0 0;font-size:16px;line-height:1.45;font-weight:600;color:#B85300}
+.sc p{margin-top:14px;font-size:15px;line-height:1.55;color:#333333}
+.how{padding:110px 32px;text-align:center}
+.how .eyebrow{margin:0;font-size:18px;font-weight:600;letter-spacing:.12em;color:#FF7803}
+.how h2{margin:10px 0 0;font-size:40px;line-height:1.25;font-weight:600;color:#F1F1F1}
+.how .prose{max-width:820px;margin:44px auto 0;text-align:left}
+.diff{min-height:700px;justify-content:flex-start;text-align:left;padding:110px 32px}
+.diff::before{background:rgba(0,0,0,.72)}
+.diff .box{max-width:720px;margin-left:max(0px,calc((100% - 1140px) / 2))}
+.diff h2{margin:0 0 28px;font-size:40px;line-height:1.25;font-weight:600;color:#FF7803}
+.diff .prose p{color:#FFFFFF}
+.diff .with{margin-top:28px;font-size:18px;font-weight:500}
+.diff ul{margin:20px 0 0;padding-left:22px}
+.diff li{font-size:17px;line-height:1.5;font-weight:400}
+.diff li+li{margin-top:14px}
+.foryou{padding:110px 32px}
+.foryou .split{align-items:start}
+.foryou h2{margin:0;font-size:40px;line-height:1.25;font-weight:600;color:#111111}
+.foryou .kw li{font-size:17px}
+.faqband{padding:110px 32px}
+.faqband::before{background:rgba(0,0,0,.78)}
+.faqband .inner{max-width:900px;width:100%;text-align:left}
+.faqband .eyebrow{margin:0;font-size:18px;font-weight:600;letter-spacing:.12em;color:#FF7803}
+.faqband h2{margin:8px 0 40px;font-size:44px;line-height:1.2;font-weight:600;color:#F1F1F1}
+.faqband .qa h3{font-size:18px}
+.faqband .qa p{color:#FFFFFF;text-align:justify}
+@media (max-width:1024px){
+.cards5{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:767px){
+.cards5{grid-template-columns:1fr}
+.what,.how,.foryou{padding:64px 36px}
+.what .cap h2,.how h2,.foryou h2,.diff h2,.faqband h2{font-size:28px}
+.diff,.faqband{padding:72px 36px}
+.prob-list .kw li{font-size:15px}
+.prob-p{font-size:15px}
+}
+
+/* ---- AIContent ---- */
+.pg2{display:grid;grid-template-columns:minmax(0,1fr) 180px minmax(0,1fr);gap:48px;align-items:center;max-width:1140px;margin:56px auto 0;text-align:left}
+.pg2 .mid{display:flex;justify-content:center}
+.pg2 .mid svg{width:140px;height:210px}
+.pg2 .kw li{font-size:17px}
+.stmt{max-width:820px;margin:40px auto 0;font-size:24px;line-height:1.4;font-weight:600;color:#FF7803}
+@media (max-width:900px){
+.pg2{grid-template-columns:1fr;gap:28px}
+.pg2 .mid{display:none}
+}
+@media (max-width:767px){
+.stmt{font-size:18px}
+.pg2 .kw li{font-size:15px}
+}
+
+/* ---- TeamReadiness ---- */
+
+/* ---- SolucionesLinguisticas ---- */
+
+/* ---- Blog ---- */
+.posts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 80px;max-width:1040px;margin:0 auto;padding:0 32px}
+@media (max-width:767px){
+.posts{grid-template-columns:1fr;padding:0 36px;gap:40px}
+}
+
+/* ---- TrabajaConNosotras ---- */
+
+/* ---- Contacto ---- */
+
+/* ---- FAQ ---- */
+.faq-g .btn,.faq-g  .wp-block-buttons{margin-top:40px}
+.faq-g+.faq-g{padding-top:0}
+.faq-end{padding:110px 32px;text-align:center;background:#F1F1F1;color:#111111}
+.faq-end h2{margin:0;font-size:48px;line-height:1.2;font-weight:600;color:#111111}
+.faq-end p{max-width:620px;margin:24px auto 0;font-size:18px;color:#222222}
+.faq-end .btn,.faq-end  .wp-block-buttons{margin-top:40px}
+@media (max-width:767px){
+.faq-end{padding:64px 36px}
+.faq-end h2{font-size:30px}
+}
+
+/* ---- AvisoLegal ---- */
+
+/* ---- Privacidad ---- */
+
+/* ---- Cookies ---- */
+
+/* ---- shared responsive ---- */
+@media (max-width:1024px){
+.hdr{height:90px;padding:0 32px 0 44px}
+.hdr .logo{width:29px;height:46px}
+}
+@media (max-width:767px){
+.wrap{padding:0 36px}
+.photo{padding:130px 36px 64px;min-height:0}
+.pt{font-size:32px}
+.pt.light{font-size:30px;line-height:1.38}
+.sub{margin-top:22px;font-size:16px}
+.sub.strong{font-size:17px}
+.bsec{padding:40px 36px 64px}
+.bicon{width:32px;height:50px;margin-bottom:28px}
+.st{font-size:24px}
+.intro{font-size:15px;margin-top:24px}
+.kw{font-size:14px;line-height:1.45}
+.prose p{font-size:15px}
+.f-cols{grid-template-columns:1fr;gap:40px;padding:0 36px}
+.copy{padding:40px 36px 32px}
+.social{gap:48px;margin-bottom:40px}
+}
+
+/* ---- Main (responsive) ---- */
+@media (max-width:1200px){
+.cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+.prob-grid{grid-template-columns:1fr;gap:32px}
+.prob-grid .mid{display:none}
+.fit-grid{grid-template-columns:1fr;gap:24px}
+}
+@media (max-width:767px){
+.home-hero{min-height:0;padding:130px 36px 66px}
+.home-hero .hb{left:14%;top:146px;margin-top:0;width:41px;height:62px}
+.home-hero h1{font-size:30px}
+.home-hero p{margin-top:40px;font-size:15px}
+.home-hero .btn,.home-hero  .wp-block-buttons{margin-top:22px}
+.prob-q,.prob-c,.fit-c{font-size:18px}
+.quienes{min-height:0}
+.quienes h3{font-size:30px}
+.sols{padding:72px 36px}
+.sols h2{font-size:30px}
+.cards{grid-template-columns:1fr}
+.fit{padding:72px 36px}
+}
+
+/* ---- NuestraHistoria (responsive) ---- */
+@media (max-width:1024px){
+.mvv-grid{grid-template-columns:1fr;gap:48px}
+.testi-grid{grid-template-columns:1fr}
+}
+@media (max-width:767px){
+.mvv{padding:64px 36px}
+.mvv h3{font-size:24px}
+.mvv p,.mvv .kw{font-size:15px}
+.story{padding:72px 0}
+.story-h{font-size:30px}
+.story-lead{font-size:17px;margin-top:28px}
+.logos{grid-template-columns:1fr;max-width:280px;margin-top:48px}
+.testi{padding:72px 36px}
+.quote{padding:28px 22px}
+.q{font-size:16px}
+}
+@media (max-width:1024px){
+.c-grid{grid-template-columns:1fr;gap:48px}
+.faq-g{grid-template-columns:1fr;gap:40px}
+.faq-g .fb{margin-top:32px}
+}
+@media (max-width:767px){
+.intro-pg{padding:150px 36px 64px}
+.intro-pg .pt{font-size:30px;text-align:left;margin-bottom:24px}
+.stats{gap:40px;margin-top:40px}
+.stat strong{font-size:31px}
+.txt{padding:48px 36px 64px}
+.h2o{font-size:22px;margin-bottom:28px}
+.h2o.c{text-align:left}
+.eq .pt{font-size:26px;margin-bottom:24px}
+.blog-intro{padding:170px 0 56px}
+.blog-intro .pt{font-size:30px;margin-bottom:20px}
+.construction{min-height:0;padding:64px 36px 0}
+.c-card{padding:22px 20px 36px;border-radius:40px 40px 0 0;text-align:center}
+.c-card h2{font-size:30px}
+.c-card p{font-size:15px}
+.form-sec{padding:48px 36px 72px}
+.contact{padding:130px 36px 72px}
+.faq-g{padding:64px 36px}
+.faq-g h2{font-size:32px;white-space:normal}
+.simple{padding:150px 36px 32px}
+}
+
+/* ---- Calidad (responsive) ---- */
+@media (max-width:900px){
+.split{grid-template-columns:1fr;gap:40px}
+.split.rev>:first-child{order:0}
+.steps{grid-template-columns:1fr}
+}
+@media (max-width:767px){
+.sec{padding:64px 36px}
+.h5o{font-size:24px;margin-bottom:22px}
+.h2c{font-size:26px}
+.lead{font-size:16px}
+.cta-band{padding:64px 36px}
+.legal{padding:150px 36px 64px}
+.legal h1{font-size:30px}
+.legal p,.legal li{font-size:15px}
+.note-txt{font-size:16px}
+}
+
+/* ---- Equipo (responsive) ---- */
+
+/* ---- GlobalReadiness (responsive) ---- */
+
+/* ---- AIContent (responsive) ---- */
+
+/* ---- TeamReadiness (responsive) ---- */
+
+/* ---- SolucionesLinguisticas (responsive) ---- */
+
+/* ---- Blog (responsive) ---- */
+
+/* ---- TrabajaConNosotras (responsive) ---- */
+
+/* ---- Contacto (responsive) ---- */
+
+/* ---- FAQ (responsive) ---- */
+
+/* ---- AvisoLegal (responsive) ---- */
+
+/* ---- Privacidad (responsive) ---- */
+
+/* ---- Cookies (responsive) ---- */
+
+/* ==== blocks.css ==== */
+/* Block-markup adapter: maps the design's components onto core blocks.
+   Edited by hand; tools/build_css.py appends it to site.css. */
+
+html,body{margin:0;background:#000000}
+body{color:#FFFFFF;font-family:Montserrat,"Helvetica Neue",Arial,sans-serif}
+a{color:#FFFFFF}a:hover{color:#FF7803}
+.wp-site-blocks{padding:0}
+.ww .wp-block-template-part{margin:0}
+.ww .ww-content>*,.ww .ww-main>*{margin-block:0}
+
+/* ---------- header variants ---------- */
+.is-solid .hdr{background:#000000}
+.is-solid .ww-main{padding-top:74px}
+
+/* ---------- navigation (core/navigation styled as the design menu) ---------- */
+/* top:37px reproduces the design, where the menu row starts at the header's centre line */
+.hdr nav.ww-nav{position:absolute;top:37px;left:50%;transform:translateX(-50%);margin:0;font-size:16px}
+.ww-nav .wp-block-navigation__container{gap:40px}
+.ww-nav .wp-block-navigation-item{position:relative}
+.ww-nav .wp-block-navigation-item__content,
+.ww-nav .wp-block-navigation-submenu__toggle{display:flex;align-items:center;height:74px;padding:0;color:#FFFFFF;font:inherit;font-size:16px;line-height:1.5;white-space:nowrap;text-decoration:none;background:none;border:0;cursor:pointer}
+.ww-nav.wp-block-navigation .has-child .wp-block-navigation-submenu__toggle{padding:0}
+.ww-nav .wp-block-navigation-item:hover>.wp-block-navigation-item__content,
+.ww-nav .wp-block-navigation-item:focus-within>.wp-block-navigation-item__content,
+.ww-nav .current-menu-item>.wp-block-navigation-item__content,
+.ww-nav .current-menu-ancestor>.wp-block-navigation-item__content{color:#FF7803}
+.ww-nav .wp-block-navigation-item:hover>.wp-block-navigation__submenu-icon,
+.ww-nav .current-menu-ancestor>.wp-block-navigation__submenu-icon{color:#FF7803}
+.ww-nav>.wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container>.current-menu-item>.wp-block-navigation-item__content .wp-block-navigation-item__label,
+.ww-nav>.wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__container>.current-menu-ancestor>.wp-block-navigation-item__content .wp-block-navigation-item__label{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
+/* caret: the design's small solid triangle */
+.ww-nav.wp-block-navigation .wp-block-navigation__submenu-icon,
+.ww-nav.wp-block-navigation .has-child .wp-block-navigation-submenu__toggle+.wp-block-navigation__submenu-icon{display:block;flex:none;width:9px;height:7px;margin:0 0 0 12px;padding:0;color:#FFFFFF;background:none;border:0;transition:transform .2s;pointer-events:none}
+.ww-nav .wp-block-navigation__submenu-icon svg{display:none}
+.ww-nav .wp-block-navigation__submenu-icon::before{content:"";display:block;width:0;height:0;border-left:4.5px solid transparent;border-right:4.5px solid transparent;border-top:7px solid currentColor}
+.ww-nav .has-child:hover>.wp-block-navigation__submenu-icon,
+.ww-nav .has-child:focus-within>.wp-block-navigation__submenu-icon,
+.ww-nav .wp-block-navigation-submenu__toggle[aria-expanded=true]~.wp-block-navigation__submenu-icon{transform:rotate(180deg)}
+/* dropdown */
+.ww-nav.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container{background:#000000;color:#FFFFFF;border:0;border-top:2px solid #FF7803}
+.ww-nav.wp-block-navigation .has-child .wp-block-navigation__submenu-container{top:66px;left:-16px;min-width:230px;padding:12px 0;opacity:0;visibility:hidden;width:auto;height:auto;overflow:visible;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:30}
+.ww-nav.wp-block-navigation .has-child:hover>.wp-block-navigation__submenu-container,
+.ww-nav.wp-block-navigation .has-child:focus-within>.wp-block-navigation__submenu-container,
+.ww-nav.wp-block-navigation .has-child .wp-block-navigation-submenu__toggle[aria-expanded=true]~.wp-block-navigation__submenu-container{opacity:1;visibility:visible;transform:none;min-width:230px}
+.ww-nav.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content{display:block;height:auto;padding:10px 16px;font-size:15px;line-height:1.5;color:#FFFFFF}
+.ww-nav.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover,
+.ww-nav.wp-block-navigation .wp-block-navigation__submenu-container .current-menu-item>.wp-block-navigation-item__content{color:#FF7803}
+.ww-nav .wp-block-navigation__responsive-container-open{display:none}
+
+@media (max-width:1024px){
+ .hdr{height:90px;padding:0 32px 0 44px}
+ .hdr .logo{width:29px;height:46px}
+ .is-solid .hdr{background:transparent}
+ .is-solid .ww-main{padding-top:0}
+ .hdr nav.ww-nav{position:static;top:auto;transform:none;margin:0 0 0 auto}
+ /* burger: three white 2px lines in a 48px target */
+ .ww-nav .wp-block-navigation__responsive-container-open,
+ .ww-nav .wp-block-navigation__responsive-container-open:not(.always-shown){display:block;width:48px;height:48px;margin:0;padding:12px 0 12px 12px;background:linear-gradient(#FFFFFF,#FFFFFF) 12px 13px/36px 2px no-repeat,linear-gradient(#FFFFFF,#FFFFFF) 12px 23px/36px 2px no-repeat,linear-gradient(#FFFFFF,#FFFFFF) 12px 33px/36px 2px no-repeat;border:0;color:#FFFFFF;cursor:pointer}
+ .ww-nav .wp-block-navigation__responsive-container-open svg{display:none}
+ .ww-nav .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open){display:none}
+}
+/* full-screen menu (mobile), like the design's .mm */
+.ww-nav .wp-block-navigation__responsive-container.is-menu-open{position:fixed;inset:0;z-index:100000;display:flex;flex-direction:column;padding:22px 36px 32px;background:#000000;color:#FFFFFF;overflow-y:auto;animation:ww-fade .18s ease both}
+.ww-nav .is-menu-open .wp-block-navigation__responsive-close{max-width:none;width:100%}
+.ww-nav .is-menu-open .wp-block-navigation__responsive-dialog{position:relative;padding-top:70px}
+.ww-nav .is-menu-open .wp-block-navigation__responsive-dialog::before{content:"";position:absolute;top:1px;left:0;width:29px;height:46px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 180'%3E%3Cpath fill='%23E7780F' d='M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z'/%3E%3C/svg%3E") no-repeat center/contain}
+.ww-nav .wp-block-navigation__responsive-container-close{position:absolute;top:0;right:0;width:48px;height:48px;padding:0;background:none;border:0;color:#FFFFFF;font:400 34px/1 Montserrat,Arial,sans-serif;cursor:pointer}
+.ww-nav .wp-block-navigation__responsive-container-close svg{display:none}
+.ww-nav .wp-block-navigation__responsive-container-close::before{content:"\00d7";font-size:34px;line-height:48px}
+.ww-nav .is-menu-open .wp-block-navigation__responsive-container-content{display:block;padding:0}
+.ww-nav .is-menu-open .wp-block-navigation__container{display:block;gap:0}
+.ww-nav .is-menu-open .wp-block-navigation__container>.wp-block-navigation-item{display:block;border-bottom:1px solid #2A2A2A;padding:16px 0}
+.ww-nav .is-menu-open .wp-block-navigation__container>.wp-block-navigation-item>.wp-block-navigation-item__content{display:block;height:auto;font-size:20px;font-weight:500;line-height:1.5;color:#FFFFFF;pointer-events:none}
+.ww-nav .is-menu-open .wp-block-navigation__container>.wp-block-navigation-item>a.wp-block-navigation-item__content{pointer-events:auto}
+.ww-nav .is-menu-open .wp-block-navigation__container>.current-menu-item>.wp-block-navigation-item__content{color:#FF7803}
+.ww-nav.wp-block-navigation .is-menu-open .has-child .wp-block-navigation-submenu__toggle+.wp-block-navigation__submenu-icon,.ww-nav.wp-block-navigation .is-menu-open .wp-block-navigation__submenu-icon{display:none}
+.ww-nav.wp-block-navigation .is-menu-open .has-child .wp-block-navigation__submenu-container{position:static;display:block;opacity:1;visibility:visible;transform:none;min-width:0;width:auto;padding:0;border:0;background:none}
+.ww-nav.wp-block-navigation .is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content{padding:9px 0 0 16px;font-size:17px}
+
+/* ---------- buttons (core/buttons keep the design's inline layout) ---------- */
+.ww .wp-block-buttons{display:block}
+.ww .wp-block-buttons>.wp-block-button{display:inline-flex;margin:0}
+.ww .wp-block-button__link{box-sizing:border-box;line-height:1.2;word-break:normal;text-align:center}
+.fit .wp-block-button__link{min-height:66px;padding:0 56px;border-radius:33px;font-size:18px}
+.card .wp-block-buttons{margin-top:auto;align-self:flex-start}
+
+/* ---------- covers (design .photo sections) ---------- */
+.photo>.wp-block-cover__inner-container{display:contents}
+.photo>.wp-block-cover__background{display:none}
+.photo>.wp-block-cover__image-background{z-index:0}
+.wp-block-cover.photo{color:#FFFFFF}
+
+/* ---------- images replacing the design's labelled placeholders ---------- */
+.ww .wp-block-image{margin:0}
+.ww .wp-block-image img{display:block;max-width:100%}
+.ww .ph-img,.ww .ph-img img{width:100%}
+.ww .ph-img img{height:auto}
+.ww .logo-img{margin:0}
+.logo-ph .logo-img img{width:100%;aspect-ratio:1/1;object-fit:contain}
+.client .client-logo-img{flex:none;width:96px;height:56px}
+.client .client-logo-img img{width:96px;height:56px;object-fit:contain}
+.client p{margin:0}
+.stat p{margin:0}
+
+/* ---------- blog (Query Loop) ---------- */
+.blog-list{padding:0}
+.posts.wp-block-post-template{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 80px;max-width:1040px;margin:0 auto;padding:0 32px;list-style:none}
+.posts>li{margin:0}
+.post .post-img{margin:0}
+.post .post-img img{display:block;width:100%;height:100%;object-fit:cover;transition:opacity .2s}
+.post:hover .post-img img{opacity:.85}
+.post .wp-block-post-title{margin:20px 0 8px;font-size:22px;line-height:1.3;font-weight:600;color:#F1F1F1}
+.post .wp-block-post-title a{color:#F1F1F1;text-decoration:none}
+.post:hover .wp-block-post-title a,.post .wp-block-post-title a:hover{color:#FF7803}
+.post .post-meta{margin:0;font-size:15px;color:#CFCFCF}
+.post .post-meta p{margin:0}
+.post .wp-block-post-excerpt__more-text{display:none}
+.wp-block-query-pagination.pager{display:flex;justify-content:center;gap:12px;margin:0;padding:64px 32px 110px}
+.pager .wp-block-query-pagination-numbers{display:flex;gap:12px;margin:0}
+.pager .page-numbers{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:22px;border:1px solid #444444;color:#FFFFFF;text-decoration:none;font-size:16px}
+.pager .page-numbers.current{background:#FF7803;border-color:#FF7803}
+.pager a.page-numbers:hover{border-color:#FF7803;color:#FFFFFF}
+.pager .page-numbers.dots{border:0}
+.blog-list .wp-block-query-no-results .wrap{padding-bottom:110px}
+@media (max-width:767px){
+ .posts.wp-block-post-template{grid-template-columns:1fr;padding:0 36px;gap:40px}
+ .wp-block-query-pagination.pager{padding:48px 36px 72px}
+}
+
+/* ---------- single post ---------- */
+.single{max-width:880px;margin:0 auto;padding:110px 32px 110px}
+.single .pt{margin:0 0 16px}
+.single .post-meta{margin:0 0 40px;color:#CFCFCF;font-size:15px}
+.single .single-img{margin:0 0 48px}
+.single .single-img img{border-radius:12px}
+.single-content p,.single-content li{font-size:16px;line-height:1.6;text-align:justify}
+.single-content>*+*{margin-top:18px}
+.single-content h2,.single-content h3{margin:48px 0 18px;font-size:22px;line-height:1.35;font-weight:600;color:#F1F1F1}
+.single-content a{text-underline-offset:3px}
+.single-back{margin-top:56px}
+@media (max-width:767px){.single{padding:64px 36px}}
+
+/* ---------- forms ([wordworks_form]) ---------- */
+.ww-hp{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+.form-msg{margin:0 0 24px;padding:14px 18px;border-radius:12px;background:#1E1E1E;color:#FFFFFF;font-size:15px;border-left:0}
+.form-msg.is-error{background:#3A1A0A}
+.form .btn{min-height:48px}
+
+/* ---------- misc ---------- */
+.u-mt-40{margin-top:40px}
+
+/* Fallback shown only while an image is missing from the Media Library. */
+.ww .iph p,.ww .img-ph p,.ww .client-logo p{margin:0;font:inherit;letter-spacing:normal;text-transform:none;color:inherit;text-align:inherit}
+
+/* Overlay: beat core's white background and centred items. */
+.ww-nav.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open{background-color:#000000;color:#FFFFFF}
+.ww-nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+.ww-nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
+.ww-nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item,
+.ww-nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{align-items:stretch;justify-content:flex-start;text-align:left}
+.ww-nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{color:#FFFFFF;text-decoration:none}
+.ww-nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .current-menu-item>.wp-block-navigation-item__content{color:#FF7803}
+.ww-nav.wp-block-navigation .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__label{text-decoration:none}
+
+/* Blog card meta on one line, like the design: "fecha · extracto". */
+.post .wp-block-post-date.post-meta,.post .wp-block-post-excerpt.post-meta,.post .wp-block-post-excerpt__excerpt{display:inline}
+.post .wp-block-post-excerpt.post-meta::before{content:" \00b7 "}
+
+/* ==== motion.css ==== */
+/* Motion, following the design's animation notes:
+   - hero headlines rise on load (.load, .load-2, .load-3; .load-fade for the hero bubble)
+   - sections, cards and lists rise as they scroll into view (.reveal + assets/js/motion.js)
+   - buttons and cards lift on hover (design CSS), dropdowns fade (blocks.css)
+   Everything is off for prefers-reduced-motion, and .reveal content stays visible
+   without JavaScript or in the editor (the html.ww-motion class is set by the theme). */
+
+@keyframes ww-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes ww-fade{from{opacity:0}to{opacity:1}}
+
+@media (prefers-reduced-motion:no-preference){
+ .load{animation:ww-rise .8s cubic-bezier(.2,.7,.2,1) both}
+ .load-2{animation-delay:.15s}
+ .load-3{animation-delay:.3s}
+ .load-fade{animation:ww-fade 1.2s ease both .2s}
+
+ .ww-motion .reveal{opacity:0;transform:translateY(28px)}
+ .ww-motion .reveal.is-in{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.2,.7,.2,1) var(--ww-delay,0s),transform .8s cubic-bezier(.2,.7,.2,1) var(--ww-delay,0s)}
+}
+
+@media (prefers-reduced-motion:reduce){
+ .load,.load-fade,.reveal{animation:none!important;opacity:1!important;transform:none!important}
+ .btn,.wp-block-button__link,.card,.sc,.post .post-img img,
+ .ww-nav .wp-block-navigation__submenu-container,.ww-nav .wp-block-navigation__submenu-icon{transition:none!important}
+ .btn:hover,.wp-block-button__link:hover,.card:hover,.sc:hover{transform:none!important}
+ .ww-nav .wp-block-navigation__responsive-container.is-menu-open{animation:none}
+}
+
+/* The editor never runs motion.js: keep everything visible there. */
+.editor-styles-wrapper .reveal{opacity:1;transform:none}
+
+/* ==== utilities.css ==== */
+/* Generated by tools/convert.mjs from inline styles in the design. Do not edit. */
+.u-min-height-430px-0{min-height:430px !important}
+.u-max-width-480px-margin-0-auto-1{max-width:480px !important;margin:0 auto !important}
+.u-aspect-ratio-768-746-max-width-480px-mar-2{aspect-ratio:768/746 !important;max-width:480px !important;margin:0 auto !important}
+.u-max-width-900px-margin-left-auto-margin--3{max-width:900px !important;margin-left:auto !important;margin-right:auto !important}
+.u-max-width-440px-margin-0-auto-4{max-width:440px !important;margin:0 auto !important}
+.u-aspect-ratio-768-691-max-width-440px-mar-5{aspect-ratio:768/691 !important;max-width:440px !important;margin:0 auto !important}
+.u-aspect-ratio-768-741-max-width-440px-mar-6{aspect-ratio:768/741 !important;max-width:440px !important;margin:0 auto !important}
+.u-min-height-640px-7{min-height:640px !important}
+.u-padding-bottom-0-8{padding-bottom:0 !important}
+.u-margin-top-16px-9{margin-top:16px !important}
+.u-aspect-ratio-375-334-10{aspect-ratio:375/334 !important}
+.u-n-3-11{--n:3 !important}
+.u-width-44px-height-70px-margin-bottom-28p-12{width:44px !important;height:70px !important;margin-bottom:28px !important}
+.u-min-height-460px-13{min-height:460px !important}
+.u-text-align-center-14{text-align:center !important}
+.u-min-height-690px-15{min-height:690px !important}
+.u-min-height-620px-16{min-height:620px !important}
+.u-color-f1f1f1-17{color:#F1F1F1 !important}
+.u-min-height-500px-18{min-height:500px !important}
+.u-max-width-600px-19{max-width:600px !important}
+.u-font-size-18px-20{font-size:18px !important}
+.u-min-height-430px-padding-top-120px-21{min-height:430px !important;padding-top:120px !important}
+.u-max-width-520px-22{max-width:520px !important}
+.u-font-size-18px-margin-top-20px-23{font-size:18px !important;margin-top:20px !important}
+.u-width-200px-height-300px-margin-top-100p-24{width:200px !important;height:300px !important;margin-top:100px !important}
+.u-width-60px-height-96px-margin-64px-auto--25{width:60px !important;height:96px !important;margin:64px auto 0 !important}

@@ -1,0 +1,30 @@
+/* Motion, following the design's animation notes:
+   - hero headlines rise on load (.load, .load-2, .load-3; .load-fade for the hero bubble)
+   - sections, cards and lists rise as they scroll into view (.reveal + assets/js/motion.js)
+   - buttons and cards lift on hover (design CSS), dropdowns fade (blocks.css)
+   Everything is off for prefers-reduced-motion, and .reveal content stays visible
+   without JavaScript or in the editor (the html.ww-motion class is set by the theme). */
+
+@keyframes ww-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes ww-fade{from{opacity:0}to{opacity:1}}
+
+@media (prefers-reduced-motion:no-preference){
+ .load{animation:ww-rise .8s cubic-bezier(.2,.7,.2,1) both}
+ .load-2{animation-delay:.15s}
+ .load-3{animation-delay:.3s}
+ .load-fade{animation:ww-fade 1.2s ease both .2s}
+
+ .ww-motion .reveal{opacity:0;transform:translateY(28px)}
+ .ww-motion .reveal.is-in{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.2,.7,.2,1) var(--ww-delay,0s),transform .8s cubic-bezier(.2,.7,.2,1) var(--ww-delay,0s)}
+}
+
+@media (prefers-reduced-motion:reduce){
+ .load,.load-fade,.reveal{animation:none!important;opacity:1!important;transform:none!important}
+ .btn,.wp-block-button__link,.card,.sc,.post .post-img img,
+ .ww-nav .wp-block-navigation__submenu-container,.ww-nav .wp-block-navigation__submenu-icon{transition:none!important}
+ .btn:hover,.wp-block-button__link:hover,.card:hover,.sc:hover{transform:none!important}
+ .ww-nav .wp-block-navigation__responsive-container.is-menu-open{animation:none}
+}
+
+/* The editor never runs motion.js: keep everything visible there. */
+.editor-styles-wrapper .reveal{opacity:1;transform:none}

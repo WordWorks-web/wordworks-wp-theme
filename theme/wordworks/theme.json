@@ -1,0 +1,105 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"useRootPaddingAwareAlignments": false,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"custom": true,
+			"palette": [
+				{ "slug": "primary", "name": "Naranja Word Works", "color": "#FF7803" },
+				{ "slug": "primary-dark", "name": "Naranja oscuro", "color": "#B85300" },
+				{ "slug": "black", "name": "Negro", "color": "#000000" },
+				{ "slug": "light", "name": "Gris claro", "color": "#F1F1F1" },
+				{ "slug": "white", "name": "Blanco", "color": "#FFFFFF" },
+				{ "slug": "ink", "name": "Texto oscuro", "color": "#111111" }
+			]
+		},
+		"layout": {},
+		"spacing": {
+			"blockGap": null,
+			"margin": true,
+			"padding": true,
+			"units": [ "px", "%", "em", "rem", "vw", "vh" ]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fluid": false,
+			"fontFamilies": [
+				{
+					"slug": "montserrat",
+					"name": "Montserrat",
+					"fontFamily": "Montserrat, \"Helvetica Neue\", Arial, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Montserrat",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/montserrat-latin-wght-normal.woff2" ]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontStyle": "italic",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/montserrat-latin-wght-italic.woff2" ]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{ "slug": "small", "name": "Pequeño", "size": "14px" },
+				{ "slug": "medium", "name": "Normal", "size": "16px" },
+				{ "slug": "large", "name": "Grande", "size": "24px" },
+				{ "slug": "x-large", "name": "Muy grande", "size": "44px" },
+				{ "slug": "xx-large", "name": "Titular", "size": "64px" }
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--black)",
+			"text": "var(--wp--preset--color--white)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--montserrat)",
+			"fontSize": "16px",
+			"lineHeight": "1.5"
+		},
+		"spacing": {
+			"padding": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+		},
+		"elements": {
+			"link": {
+				"color": { "text": "var(--wp--preset--color--white)" },
+				":hover": { "color": { "text": "var(--wp--preset--color--primary)" } }
+			},
+			"button": {
+				"color": {
+					"background": "var(--wp--preset--color--primary)",
+					"text": "var(--wp--preset--color--white)"
+				},
+				"typography": { "fontSize": "17px", "fontWeight": "400", "lineHeight": "1.2" },
+				"border": { "radius": "28px" },
+				":hover": {
+					"color": { "background": "#E86C00", "text": "var(--wp--preset--color--white)" }
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{ "name": "header", "title": "Cabecera", "area": "header" },
+		{ "name": "footer", "title": "Pie de página", "area": "footer" }
+	],
+	"customTemplates": [
+		{
+			"name": "page-solid-header",
+			"title": "Página con cabecera sólida",
+			"postTypes": [ "page" ]
+		}
+	]
+}

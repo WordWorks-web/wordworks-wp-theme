@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Servicios Lingüísticos Profesionales y Traducción | Word Works</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000000}
+*,*::before,*::after{box-sizing:border-box}
+a{color:#FFFFFF}a:hover{color:#FF7803}
+.ww{position:relative;background:#000000;color:#FFFFFF;font-family:Montserrat,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.ww p{margin:0}
+.ww :focus-visible{outline:2px solid #FF7803;outline-offset:3px}
+.accent{color:#FF7803}
+/* header */
+.hdr{position:absolute;top:0;left:0;right:0;z-index:20;height:74px;display:flex;align-items:center;padding:0 max(32px,calc((100% - 1040px) / 2))}
+.hdr.solid{background:#000000}
+.logo{display:block;width:38px;height:60px;flex:none}
+.logo svg{display:block;width:100%;height:100%}
+.nav{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:40px;margin:0;padding:0;list-style:none}
+.nav>li{position:relative}
+.nl{display:flex;align-items:center;gap:12px;height:74px;color:#FFFFFF;text-decoration:none;font-size:16px;white-space:nowrap;background:none;border:0;padding:0;font-family:inherit;cursor:pointer}
+.nl:hover,.nl.active{color:#FF7803}
+.nl.active .lbl{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
+.caret{width:0;height:0;border-left:4.5px solid transparent;border-right:4.5px solid transparent;border-top:7px solid currentColor;transition:transform .2s}
+.dd{position:absolute;top:66px;left:-16px;min-width:230px;margin:0;padding:12px 0;list-style:none;background:#000000;border-top:2px solid #FF7803;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s}
+.has-sub:hover .dd,.has-sub:focus-within .dd{opacity:1;visibility:visible;transform:none}
+.has-sub:hover .caret,.has-sub:focus-within .caret{transform:rotate(180deg)}
+.dd a{display:block;padding:10px 16px;font-size:15px;color:#FFFFFF;text-decoration:none;white-space:nowrap}
+.dd a:hover,.dd a.active{color:#FF7803}
+.burger{display:none;margin-left:auto;width:48px;height:48px;background:none;border:0;padding:12px 0 12px 12px;cursor:pointer}
+.burger span{display:block;height:2px;background:#FFFFFF;border-radius:1px}
+.burger span+span{margin-top:8px}
+.mm{position:fixed;inset:0;z-index:40;background:#000000;padding:22px 36px 32px;overflow-y:auto}
+.mm-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.mm-top .logo{width:29px;height:46px}
+.mm-close{width:48px;height:48px;background:none;border:0;color:#FFFFFF;font-size:34px;line-height:1;cursor:pointer;font-family:inherit}
+.mm-grp{border-bottom:1px solid #2A2A2A;padding:16px 0}
+.mm-h{display:block;font-size:20px;font-weight:500;color:#FFFFFF;text-decoration:none}
+.mm-h.active{color:#FF7803}
+.mm-grp a.sub{display:block;padding:9px 0 0 16px;font-size:17px;color:#FFFFFF;text-decoration:none}
+.mm-grp a.sub.active,.mm-grp a.sub:hover{color:#FF7803}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:28px;background:#FF7803;color:#FFFFFF;font-size:17px;font-weight:400;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background .15s,transform .15s}
+.btn:hover{background:#E86C00;color:#FFFFFF;transform:translateY(-1px)}
+.btn-sm{min-height:48px;padding:0 24px;font-size:16px;border-radius:24px}
+/* motion */
+@keyframes ww-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes ww-fade{from{opacity:0}to{opacity:1}}
+.load{animation:ww-rise .8s cubic-bezier(.2,.7,.2,1) both}
+.load-2{animation-delay:.15s}.load-3{animation-delay:.3s}
+.load-fade{animation:ww-fade 1.2s ease both .2s}
+.reveal{animation:ww-rise .8s cubic-bezier(.2,.7,.2,1) both}
+@supports (animation-timeline: view()){.reveal{animation:ww-rise linear both;animation-timeline:view();animation-range:entry 0% cover 22%}}
+@media (prefers-reduced-motion:reduce){.load,.reveal,.load-fade{animation:none}.btn,.dd,.caret{transition:none}}
+/* layout */
+.wrap{max-width:1140px;margin:0 auto;padding:0 32px}
+.narrow{max-width:606px;margin:0 auto}
+.prose p{text-align:justify}
+.prose p+p{margin-top:28px}
+.below{padding-top:74px}
+/* photo hero (stand-in backgrounds until real photos are uploaded) */
+.photo{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:96px 32px;overflow:hidden}
+.photo::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.photo>*{position:relative}
+.ph-label{position:absolute;right:16px;bottom:14px;padding:4px 10px;border-radius:4px;background:rgba(0,0,0,.6);color:#FFFFFF;font-size:12px;line-height:1.4}
+.hero-c{max-width:780px}
+.pt{margin:0;font-size:56px;line-height:1.2;font-weight:600;color:#FF7803}
+.pt .w{color:#F1F1F1}
+.pt.light{font-weight:400;font-size:62px;line-height:1.35}
+.sub{margin-top:28px;font-size:22px;line-height:1.4}
+.sub.strong{font-weight:600;font-size:24px}
+.ph-calidad{background:linear-gradient(100deg,#2f3438 0%,#5b6166 40%,#8a8f93 68%,#4b5054 100%)}
+.ph-equipo{background:radial-gradient(ellipse 60% 70% at 58% 8%,#e2a457 0%,#8a5222 28%,#2a1c12 62%,#140e0a 100%)}
+.ph-global{background:radial-gradient(ellipse at 50% 25%,#5a4a3e 0%,#2a2420 50%,#151311 100%)}
+.ph-ai{background:radial-gradient(circle at 88% 28%,rgba(255,190,110,.38) 0 4%,transparent 5.5%),radial-gradient(ellipse at 32% 35%,#6b5a48 0%,#2b2722 45%,#141312 100%)}
+.ph-team{background:linear-gradient(110deg,#57544f 0%,#8b8781 45%,#a09a92 60%,#6d6a66 100%)}
+.ph-ling{background:radial-gradient(ellipse at 50% 45%,#7a5232 0%,#3a281a 50%,#1c140e 100%)}
+.ph-red{background:radial-gradient(circle at 12% 18%,rgba(230,90,60,.45) 0 6%,transparent 12%),radial-gradient(circle at 40% 85%,rgba(60,110,200,.45) 0 6%,transparent 13%),radial-gradient(circle at 92% 60%,rgba(255,140,60,.45) 0 6%,transparent 12%),#15161a}
+.ph-contact{background:radial-gradient(circle at 60% 33%,rgba(255,170,110,.35) 0 3%,transparent 4%),linear-gradient(180deg,#3f464c 0%,#4b4e50 62%,#5a4632 100%)}
+.ph-faq{background:linear-gradient(100deg,#2c3238 0%,#4a525a 52%,#2f353b 100%)}
+.ph-quienes{background:radial-gradient(ellipse at 70% 40%,#4a4038 0%,#26211d 55%,#141110 100%)}
+.ph-bokeh{background:radial-gradient(circle at 8% 15%,rgba(255,140,40,.75) 0 7%,transparent 7.6%),radial-gradient(circle at 37% 30%,rgba(255,140,40,.7) 0 6%,transparent 6.6%),radial-gradient(circle at 58% 18%,rgba(255,150,60,.75) 0 5%,transparent 5.6%),radial-gradient(circle at 80% 25%,rgba(70,150,220,.45) 0 12%,transparent 22%),#0d1622}
+/* bubble section */
+.bsec{padding:120px 32px;text-align:center}
+.bicon{display:block;width:46px;height:78px;margin:0 auto 44px}
+.st{margin:0 auto;max-width:900px;font-size:32px;line-height:1.3;font-weight:500;text-transform:uppercase;color:#F1F1F1}
+.st-block{display:block}
+.intro{max-width:760px;margin:40px auto 0;font-size:17px;line-height:1.55;text-align:justify}
+.intro.c{text-align:center}
+.kw{margin:0;padding:0 0 0 24px;text-align:left;font-size:17px;line-height:1.55}
+.kw li+li{margin-top:24px}
+.kw strong{font-weight:700}
+.todo{max-width:760px;margin:0 auto;padding:28px 24px;border:1px dashed #555;border-radius:8px;color:#BDBDBD;font-size:14px;text-align:center}
+.todo-wrap{padding:0 32px 110px}
+/* footer */
+.f-bubble{display:flex;justify-content:center;padding:56px 32px 110px}
+.f-bubble svg{width:110px;height:177px}
+.ftr{padding-top:48px}
+.f-cols{display:grid;grid-template-columns:39% 25% 1fr;max-width:1040px;margin:0 auto;padding:0 32px;box-sizing:content-box}
+.f-in{max-width:1040px;margin:0 auto;box-sizing:content-box}
+.f-cols h5{margin:0 0 18px;font-size:26px;line-height:1.2;font-weight:600;color:#FFFFFF}
+.f-tag{max-width:300px;font-size:14px;line-height:1.3}
+.social{display:flex;gap:100px;margin:24px 0 52px}
+.social a{display:block;width:26px;height:26px;color:#FF7803}
+.social svg{display:block;width:100%;height:100%}
+.f-contact a{display:block;margin-bottom:12px;font-size:16px;text-underline-offset:3px}
+.f-links{margin:0;padding:0;list-style:none}
+.f-links li+li{margin-top:12px}
+.f-links a{font-size:14px;text-underline-offset:3px}
+.f-links .b{font-weight:600}
+.copy{padding:56px 32px 26px;font-size:14px}
+/* forms */
+.form{display:grid;gap:24px}
+.field label{display:block;margin-bottom:8px;font-size:16px;color:#F1F1F1}
+.field input,.field textarea{width:100%;height:48px;padding:0 16px;background:#F1F1F1;color:#111111;border:0;border-radius:0;font:400 16px/1.4 Montserrat,Arial,sans-serif}
+.field textarea{height:96px;padding:12px 16px;resize:vertical}
+.field ::placeholder{color:#6E6E6E}
+.form.rounded .field input,.form.rounded .field textarea{height:52px;border:1px solid #C8C8C8;border-radius:12px}
+.form.rounded .field textarea{height:96px}
+
+.mvv{background:#F1F1F1;color:#111111;padding:110px 32px}
+.mvv-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px;max-width:1140px;margin:0 auto}
+.mvv h3{margin:0 0 24px;font-size:32px;line-height:1.2;font-weight:600;color:#111111}
+.mvv h3::after{content:"";display:block;width:48px;height:3px;margin-top:14px;background:#FF7803}
+.mvv p{text-align:justify;font-size:16px;line-height:1.55}
+.mvv p+p{margin-top:20px}
+.mvv .kw{padding-left:20px;font-size:16px;text-align:justify}
+.mvv .kw li+li{margin-top:20px}
+.story{padding:120px 0}
+.story-h{margin:0;font-size:56px;line-height:1.2;font-weight:600;color:#FF7803;text-align:center}
+.story-lead{max-width:880px;margin:48px auto 0;font-size:22px;line-height:1.5;font-weight:500;color:#F1F1F1;text-align:center}
+.story-txt{max-width:760px;margin:44px auto 0}
+.logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;max-width:1000px;margin:80px auto 0}
+.logo-ph{margin:0;text-align:center}
+.img-ph{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;border:1px dashed #555555;border-radius:12px;background:#111111;color:#BDBDBD;font-size:14px}
+.logo-ph figcaption{margin-top:12px;font-size:14px;color:#9A9A9A}
+.ph-testi{background:linear-gradient(180deg,#8fb1d6 0%,#c7d8ea 45%,#d9c38a 100%)}
+.testi{min-height:620px;padding:110px 32px}
+.testi::before{background:rgba(0,0,0,.55)}
+.testi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;max-width:1040px;width:100%}
+.quote{margin:0;padding:40px 36px;border-radius:23px;background:rgba(0,0,0,.6);text-align:left}
+.stars{color:#FF7803;font-size:22px;letter-spacing:4px}
+.q{margin-top:18px;font-size:19px;line-height:1.5;color:#FFFFFF}
+.client{display:flex;align-items:center;gap:16px;margin-top:28px}
+.client-logo{display:flex;align-items:center;justify-content:center;width:96px;height:56px;border:1px dashed #888888;border-radius:8px;color:#D0D0D0;font-size:11px;text-align:center}
+.client cite{font-style:normal;font-weight:600;font-size:15px}
+
+.intro-pg{padding:140px 32px 120px}
+.intro-pg .pt{font-size:48px;text-align:center;color:#F1F1F1;margin-bottom:46px}
+.stats{display:flex;justify-content:center;gap:48px;margin-top:72px}
+.stat strong{display:block;font-size:44px;line-height:1.15;font-weight:600;color:#F1F1F1}
+.stat span{display:block;margin-top:4px;color:#9A9A9A}
+.light-band{background:#F1F1F1;color:#222222;padding:72px 32px}
+.light-band .todo{border-color:#999999;color:#444444}
+.txt{padding:130px 32px 100px}
+.h2o{margin:0 0 44px;font-size:32px;line-height:1.3;font-weight:600;color:#FF7803}
+.h2o.c{text-align:center}
+.eq .hero-c{max-width:1140px;width:100%;text-align:left}
+.eq .pt{max-width:520px;margin-bottom:60px}
+.blog-intro{padding:190px 0 64px}
+.blog-intro .pt{margin-bottom:44px}
+.construction{min-height:520px;align-items:flex-end;padding-bottom:0}
+.construction::before{background:rgba(0,0,0,.15)}
+.c-card{width:min(650px,100%);padding:44px 40px 56px;border-radius:48px 48px 0 0;background:rgba(241,241,241,.85);color:#222222}
+.c-card h2{margin:0;font-size:56px;line-height:1.2;font-weight:600;color:#222222}
+.c-card p{margin-top:16px;font-size:20px;line-height:1.4;color:#222222}
+.c-card .btn{margin-top:32px}
+.form-sec{padding:130px 32px 120px}
+.contact{min-height:740px;text-align:left;padding:120px 32px 96px}
+.c-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:9%;width:100%;max-width:1140px;align-items:center}
+.c-info .pt{margin-bottom:28px}
+.c-det{margin-top:52px}.c-det+.c-det{margin-top:24px}
+.c-det h3{margin:0 0 2px;font-size:16px;font-weight:700}
+.c-det a{text-decoration:none;font-size:15px}
+.contact .field label{font-size:14px}
+.faq-g{display:grid;grid-template-columns:40% 1fr;gap:60px;max-width:1140px;margin:0 auto;padding:120px 32px}
+.faq-g h2{margin:0;font-size:46px;line-height:1.2;font-weight:500;color:#F1F1F1;white-space:nowrap}
+.faq-g .fb{display:block;width:200px;height:300px;margin-top:100px}
+.qa+.qa{margin-top:48px}
+.qa h3{margin:0 0 16px;font-size:18px;line-height:1.35;font-weight:700;color:#FF7803}
+.simple{padding:190px 32px 60px}
+.simple .pt{margin-bottom:40px}
+
+.iph{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;border:1px dashed #5A5A5A;border-radius:12px;background:#141414;color:#C8C8C8;font-size:14px;line-height:1.4;text-align:center}
+.light .iph,.lt .iph{background:#E4E4E4;border-color:#9A9A9A;color:#333333}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center;max-width:1140px;margin:0 auto}
+.split.rev>:first-child{order:2}
+.sec{padding:110px 32px}
+.lt{background:#F1F1F1;color:#111111}
+.lt .kw,.lt p{color:#111111}
+.h5o{margin:0 0 32px;font-size:32px;line-height:1.25;font-weight:600;color:#FF7803}
+.lt .h5o{color:#111111}
+.lt .h5o .accent{color:#FF7803}
+.note-txt{margin-top:40px;font-size:18px;line-height:1.5;font-weight:500;color:#F1F1F1;text-align:center}
+.cap{max-width:900px;margin:0 auto;text-align:center}
+.h2c{margin:0;font-size:40px;line-height:1.25;font-weight:600;color:#F1F1F1;text-transform:uppercase}
+.h2c .accent{color:#FF7803}
+.lt .h2c{color:#111111}
+.lead{margin-top:28px;font-size:18px;line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:28px;max-width:1140px;margin:56px auto 0}
+.step{padding:32px 28px;border-radius:23px;background:#FFFFFF;color:#222222;text-align:left}
+.step h3,.step h4{margin:0 0 14px;font-size:20px;line-height:1.3;font-weight:600;color:#222222}
+.step p{font-size:15px;line-height:1.55;color:#333333}
+.step .n{display:block;margin-bottom:12px;font-size:28px;font-weight:700;color:#B85300}
+.dark-step{background:#141414;color:#F1F1F1;border:1px solid #2A2A2A}
+.dark-step h3,.dark-step h4{color:#FF7803}.dark-step p{color:#E6E6E6}
+.cta-band{padding:110px 32px;text-align:center}
+.cta-band .btn{margin-top:40px}
+.list-plain{margin:0;padding-left:22px;text-align:left}
+.list-plain li+li{margin-top:16px}
+.legal{max-width:880px;margin:0 auto;padding:190px 32px 110px}
+.legal h1{margin:0 0 48px;font-size:48px;line-height:1.2;font-weight:600;color:#FF7803}
+.legal h2,.legal h3{margin:48px 0 18px;font-size:22px;line-height:1.35;font-weight:600;color:#F1F1F1}
+.legal p,.legal li{text-align:justify;font-size:16px;line-height:1.6}
+.legal p+p{margin-top:18px}
+.legal ul{margin:16px 0;padding-left:24px}.legal li+li{margin-top:10px}
+.legal a{text-underline-offset:3px}
+.tbl{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.tbl th,.tbl td{padding:10px 12px;border:1px solid #3A3A3A;text-align:left;vertical-align:top}
+.tbl th{background:#141414;color:#FF7803;font-weight:600}
+.tbl-wrap{overflow-x:auto}
+
+.prob-list{max-width:820px;margin:44px auto 0}
+.prob-list .kw li{font-size:18px}
+.prob-p{max-width:820px;margin:28px auto 0;font-size:17px;line-height:1.6;text-align:justify}
+.flag{max-width:820px;margin:36px auto 0;font-size:20px;font-weight:600;color:#FF7803;text-align:left}
+.what{padding:110px 32px}
+.what .cap h2{margin:0;font-size:44px;line-height:1.2;font-weight:600;color:#111111}
+.what .cap h3{margin:20px auto 0;max-width:760px;font-size:20px;line-height:1.45;font-weight:500;color:#333333}
+.cards5{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:28px;max-width:1140px;margin:64px auto 0}
+.sc{display:flex;flex-direction:column;padding:36px 30px;border-radius:23px;background:#FFFFFF;color:#222222;transition:transform .2s,box-shadow .2s}
+.sc:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(255,120,3,.18)}
+.sc .ico{width:40px;height:62px;margin-bottom:22px}
+.sc h3{margin:0;font-size:21px;line-height:1.3;font-weight:600;color:#222222}
+.sc h4{margin:12px 0 0;font-size:16px;line-height:1.45;font-weight:600;color:#B85300}
+.sc p{margin-top:14px;font-size:15px;line-height:1.55;color:#333333}
+.how{padding:110px 32px;text-align:center}
+.how .eyebrow{margin:0;font-size:18px;font-weight:600;letter-spacing:.12em;color:#FF7803}
+.how h2{margin:10px 0 0;font-size:40px;line-height:1.25;font-weight:600;color:#F1F1F1}
+.how .prose{max-width:820px;margin:44px auto 0;text-align:left}
+.diff{min-height:700px;justify-content:flex-start;text-align:left;padding:110px 32px}
+.diff::before{background:rgba(0,0,0,.72)}
+.diff .box{max-width:720px;margin-left:max(0px,calc((100% - 1140px) / 2))}
+.diff h2{margin:0 0 28px;font-size:40px;line-height:1.25;font-weight:600;color:#FF7803}
+.diff .prose p{color:#FFFFFF}
+.diff .with{margin-top:28px;font-size:18px;font-weight:500}
+.diff ul{margin:20px 0 0;padding-left:22px}
+.diff li{font-size:17px;line-height:1.5;font-weight:400}
+.diff li+li{margin-top:14px}
+.foryou{padding:110px 32px}
+.foryou .split{align-items:start}
+.foryou h2{margin:0;font-size:40px;line-height:1.25;font-weight:600;color:#111111}
+.foryou .kw li{font-size:17px}
+.faqband{padding:110px 32px}
+.faqband::before{background:rgba(0,0,0,.78)}
+.faqband .inner{max-width:900px;width:100%;text-align:left}
+.faqband .eyebrow{margin:0;font-size:18px;font-weight:600;letter-spacing:.12em;color:#FF7803}
+.faqband h2{margin:8px 0 40px;font-size:44px;line-height:1.2;font-weight:600;color:#F1F1F1}
+.faqband .qa h3{font-size:18px}
+.faqband .qa p{color:#FFFFFF;text-align:justify}
+@media (max-width:1024px){.cards5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:767px){.cards5{grid-template-columns:1fr}.what,.how,.foryou{padding:64px 36px}.what .cap h2,.how h2,.foryou h2,.diff h2,.faqband h2{font-size:28px}.diff,.faqband{padding:72px 36px}.prob-list .kw li{font-size:15px}.prob-p{font-size:15px}}
+
+.pg2{display:grid;grid-template-columns:minmax(0,1fr) 180px minmax(0,1fr);gap:48px;align-items:center;max-width:1140px;margin:56px auto 0;text-align:left}
+.pg2 .mid{display:flex;justify-content:center}.pg2 .mid svg{width:140px;height:210px}
+.pg2 .kw li{font-size:17px}
+.stmt{max-width:820px;margin:40px auto 0;font-size:24px;line-height:1.4;font-weight:600;color:#FF7803}
+@media (max-width:900px){.pg2{grid-template-columns:1fr;gap:28px}.pg2 .mid{display:none}}
+@media (max-width:767px){.stmt{font-size:18px}.pg2 .kw li{font-size:15px}}
+
+@media (max-width:1024px){
+ .nav{display:none}.burger{display:block}
+ .hdr{height:90px;padding:0 32px 0 44px}.hdr .logo{width:29px;height:46px}
+ .hdr.solid{background:transparent}
+ .below{padding-top:0}
+}
+@media (max-width:767px){
+ .wrap{padding:0 36px}
+ .photo{padding:130px 36px 64px}
+ .pt{font-size:32px}.pt.light{font-size:30px;line-height:1.38}
+ .sub{margin-top:22px;font-size:16px}.sub.strong{font-size:17px}
+ .bsec{padding:40px 36px 64px}
+ .bicon{width:32px;height:50px;margin-bottom:28px}
+ .st{font-size:24px}
+ .intro{font-size:15px;margin-top:24px}
+ .kw{font-size:14px;line-height:1.45}
+ .prose p{font-size:15px}
+ .f-cols{grid-template-columns:1fr;gap:40px;padding:0 36px}
+ .copy{padding:40px 36px 32px}
+ .social{gap:48px;margin-bottom:40px}
+ .todo-wrap{padding:0 36px 64px}
+}
+
+@media (max-width:1024px){.mvv-grid{grid-template-columns:1fr;gap:48px}.testi-grid{grid-template-columns:1fr}}
+@media (max-width:767px){
+ .mvv{padding:64px 36px}.mvv h3{font-size:24px}.mvv p,.mvv .kw{font-size:15px}
+ .story{padding:72px 0}.story-h{font-size:30px}.story-lead{font-size:17px;margin-top:28px}
+ .logos{grid-template-columns:1fr;max-width:280px;margin-top:48px}
+ .testi{padding:72px 36px}.quote{padding:28px 22px}.q{font-size:16px}
+}
+
+@media (max-width:1024px){.c-grid{grid-template-columns:1fr;gap:48px}.faq-g{grid-template-columns:1fr;gap:40px}.faq-g .fb{margin-top:32px}}
+@media (max-width:767px){
+ .intro-pg{padding:150px 36px 64px}.intro-pg .pt{font-size:30px;text-align:left;margin-bottom:24px}
+ .stats{gap:40px;margin-top:40px}.stat strong{font-size:31px}
+ .txt{padding:48px 36px 64px}.h2o{font-size:22px;margin-bottom:28px}.h2o.c{text-align:left}
+ .eq .pt{font-size:26px;margin-bottom:24px}
+ .blog-intro{padding:170px 0 56px}.blog-intro .pt{font-size:30px;margin-bottom:20px}
+ .construction{min-height:0;padding:64px 36px 0}
+ .c-card{padding:22px 20px 36px;border-radius:40px 40px 0 0;text-align:center}.c-card h2{font-size:30px}.c-card p{font-size:15px}
+ .form-sec{padding:48px 36px 72px}
+ .contact{padding:130px 36px 72px}
+ .faq-g{padding:64px 36px}.faq-g h2{font-size:32px;white-space:normal}
+ .simple{padding:150px 36px 32px}
+}
+
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:40px}.split.rev>:first-child{order:0}.steps{grid-template-columns:1fr}}
+@media (max-width:767px){.sec{padding:64px 36px}.h5o{font-size:24px;margin-bottom:22px}.h2c{font-size:26px}.lead{font-size:16px}.cta-band{padding:64px 36px}.legal{padding:150px 36px 64px}.legal h1{font-size:30px}.legal p,.legal li{font-size:15px}.note-txt{font-size:16px}}
+</style>
+</helmet>
+<div class="ww">
+<header class="hdr solid">
+<a class="logo" href="Main.dc.html" aria-label="Word Works, inicio"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></a>
+<nav aria-label="Principal"><ul class="nav"><li class="has-sub"><button type="button" class="nl" aria-haspopup="true"><span class="lbl">Quiénes somos</span><span class="caret"></span></button><ul class="dd"><li><a href="NuestraHistoria.dc.html" class="">Nuestra historia</a></li><li><a href="Calidad.dc.html" class="">Calidad</a></li><li><a href="Equipo.dc.html" class="">Equipo</a></li></ul></li><li class="has-sub"><button type="button" class="nl active" aria-haspopup="true"><span class="lbl">Soluciones</span><span class="caret"></span></button><ul class="dd"><li><a href="GlobalReadiness.dc.html" class="">Global Readiness</a></li><li><a href="AIContent.dc.html" class="">AI Content Creation</a></li><li><a href="TeamReadiness.dc.html" class="">Team Readiness</a></li><li><a href="SolucionesLinguisticas.dc.html" class="active">Soluciones lingüísticas</a></li></ul></li><li class="has-sub"><button type="button" class="nl" aria-haspopup="true"><span class="lbl">Recursos</span><span class="caret"></span></button><ul class="dd"><li><a href="Blog.dc.html" class="">Blog</a></li><li><a href="TrabajaConNosotras.dc.html" class="">Trabaja con nosotras</a></li></ul></li><li><a class="nl" href="Contacto.dc.html"><span class="lbl">Contacto</span></a></li></ul></nav>
+<button type="button" class="burger" aria-label="Abrir menú" onClick="{{openMenu}}"><span></span><span></span><span></span></button>
+</header>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+<div class="mm" role="dialog" aria-label="Menú">
+<div class="mm-top"><a class="logo" href="Main.dc.html" aria-label="Word Works, inicio"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></a><button type="button" class="mm-close" aria-label="Cerrar menú" onClick="{{closeMenu}}">×</button></div>
+<div class="mm-grp"><span class="mm-h">Quiénes somos</span><a class="sub" href="NuestraHistoria.dc.html">Nuestra historia</a><a class="sub" href="Calidad.dc.html">Calidad</a><a class="sub" href="Equipo.dc.html">Equipo</a></div><div class="mm-grp"><span class="mm-h active">Soluciones</span><a class="sub" href="GlobalReadiness.dc.html">Global Readiness</a><a class="sub" href="AIContent.dc.html">AI Content Creation</a><a class="sub" href="TeamReadiness.dc.html">Team Readiness</a><a class="sub active" href="SolucionesLinguisticas.dc.html">Soluciones lingüísticas</a></div><div class="mm-grp"><span class="mm-h">Recursos</span><a class="sub" href="Blog.dc.html">Blog</a><a class="sub" href="TrabajaConNosotras.dc.html">Trabaja con nosotras</a></div><div class="mm-grp"><a class="mm-h" href="Contacto.dc.html">Contacto</a></div>
+</div>
+</sc-if>
+<main class="below">
+<section class="photo ph-ling" style="min-height:620px"><div class="hero-c"><h1 class="pt light load">Soluciones lingüísticas profesionales</h1><p class="sub load load-2">Sin precisión terminológica, coherencia de tono y control cultural, no hay internacionalización sólida</p></div><span class="ph-label">Hero: cuatro profesionales conversando en oficina, luz cálida (hero-soluciones2.png)</span></section>
+<section class="bsec">
+<svg class="bicon reveal" viewBox="0 0 120 180" aria-hidden="true"><path fill="none" stroke="#FF7803" stroke-width="4" stroke-linejoin="round" d="M48 3C24 3 4 22 4 47V133C4 158 24 177 48 177C68 177 82 166 86 150L114 146C102 139 94 128 92 116V47C92 22 72 3 48 3Z"></path></svg>
+<h2 class="st reveal">El idioma importa. <span class="accent">El criterio, más</span></h2>
+<p class="prob-p reveal">Cuando comunicas en otro idioma no solo trasladas palabras. Estás trasladando tu propuesta de valor, tu posicionamiento y la percepción que otros mercados tendrán de tu empresa.</p>
+<p class="flag reveal">Sin criterios claros, esa transferencia empieza a fallar en puntos muy concretos:</p>
+<div class="pg2">
+<ul class="kw reveal">
+<li><strong>El contenido se traduce, pero no siempre se valida</strong> si el mensaje funciona o no en el mercado de destino.</li>
+<li>La documentación técnica, traducida correctamente, no siempre refleja el <strong>posicionamiento real de la empresa</strong>.</li>
+<li><strong>La traducción humana se mezcla con la IA</strong> y se llevan a cabo revisiones internas sin control real.</li>
+</ul>
+<div class="mid reveal"><svg class="" viewBox="0 0 120 180" aria-hidden="true"><path fill="none" stroke="#E7780F" stroke-width="3" stroke-linejoin="round" d="M48 3C24 3 4 22 4 47V133C4 158 24 177 48 177C68 177 82 166 86 150L114 146C102 139 94 128 92 116V47C92 22 72 3 48 3Z"></path></svg></div>
+<ul class="kw reveal">
+<li>El trabajo se divide y se lleva a cabo por <strong>varios proveedores sin un marco común</strong> que pueda ayudar a garantizar la coherencia entre versiones.</li>
+<li>Un texto se da por válido porque <strong>“se entiende”, aunque no comunique con precisión</strong>.</li>
+<li><strong>Aparecen todo tipo de inconsistencias</strong> terminológicas entre los diferentes mercados y materiales.</li>
+</ul>
+</div>
+<h3 class="stmt reveal" style="color:#F1F1F1">Sin criterio lingüístico y cultural, la comunicación pierde consistencia y <strong class="accent">la marca se debilita</strong>.</h3>
+</section>
+<section class="what lt"><div class="cap reveal"><h2>¿Qué hacemos exactamente?</h2><h3>35 años de experiencia nos han enseñado que traducir va mucho más allá de las palabras. Trabajamos con un enfoque estructurado, no reactivo.</h3></div><div class="cards5" style="--n:3"><article class="sc reveal"><div class="ico"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></div><h3>Traducción profesional especializada</h3><h4>Textos técnicos, comerciales y corporativos con adaptación real al contexto de uso.</h4><p>Trabajamos con lingüistas especializados que comprenden el sector, la terminología y las expectativas del público objetivo para asegurar precisión y naturalidad en cada idioma.</p></article><article class="sc reveal"><svg class="ico" viewBox="0 0 120 180" aria-hidden="true"><path fill="none" stroke="#FF7803" stroke-width="5" stroke-linejoin="round" d="M48 3C24 3 4 22 4 47V133C4 158 24 177 48 177C68 177 82 166 86 150L114 146C102 139 94 128 92 116V47C92 22 72 3 48 3Z"></path></svg><h3>Revisión y corrección multilingüe</h3><h4>Control lingüístico y terminológico de documentación ya traducida o generada con IA.</h4><p>Revisamos estilo, coherencia y precisión terminológica para garantizar que el contenido sea claro, correcto y adecuado para el contexto profesional y cultural de cada mercado.</p></article><article class="sc reveal"><div class="ico"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></div><h3>Localización estratégica profesional</h3><h4>Adaptación cultural de mensajes, materiales comerciales y contenido digital.</h4><p>Ajustamos estilo, registro y referencias culturales para que tu comunicación resulte natural, relevante y creíble para el público objetivo.</p></article><article class="sc reveal"><svg class="ico" viewBox="0 0 120 180" aria-hidden="true"><path fill="none" stroke="#FF7803" stroke-width="5" stroke-linejoin="round" d="M48 3C24 3 4 22 4 47V133C4 158 24 177 48 177C68 177 82 166 86 150L114 146C102 139 94 128 92 116V47C92 22 72 3 48 3Z"></path></svg><h3>Control de calidad multilingüe</h3><h4>Validación independiente para garantizar coherencia, claridad y adecuación cultural.</h4><p>Realizamos una revisión final comparativa para detectar posibles discrepancias, erratas o ambigüedades que puedan afectar a la calidad o la comprensión del contenido en cada idioma.</p></article><article class="sc reveal"><div class="ico"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></div><h3>Gestión terminológica y coherencia de marca</h3><h4>Creación y mantenimiento de glosarios y criterios lingüísticos por mercado.</h4><p>Definimos términos clave, preferencias de estilo y equivalencias entre idiomas para asegurar que la comunicación de tu marca mantenga la coherencia en todos los contenidos.</p></article></div></section>
+<section class="how"><svg class="bicon reveal" viewBox="0 0 120 180" aria-hidden="true"><path fill="none" stroke="#FF7803" stroke-width="4" stroke-linejoin="round" d="M48 3C24 3 4 22 4 47V133C4 158 24 177 48 177C68 177 82 166 86 150L114 146C102 139 94 128 92 116V47C92 22 72 3 48 3Z"></path></svg><p class="eyebrow reveal">LA SOLUCIÓN</p><h2 class="reveal">TE CONTAMOS CÓMO TRABAJAMOS</h2><div class="prose reveal"><p>Aplicamos metodología, no solo experiencia. Analizamos el contexto del texto y su función real dentro del negocio.</p><p>Definimos criterios claros de tono, terminología y adaptación cultural para cada mercado. Asignamos especialistas por sector y país, e integramos tecnología cuando aporta eficiencia, siempre con control humano y procesos estructurados que permiten trabajar el contenido con coherencia y rigor profesional.</p><p>Antes de cualquier entrega aplicamos un control de calidad obligatorio. Así evitamos errores que muchas empresas descubren demasiado tarde, cuando ya han llegado al mercado.</p></div></section>
+<section class="photo ph-ling diff"><div class="box reveal"><h2>¿Qué nos diferencia?</h2><div class="prose"><p>Nuestra base lingüística y el amor por el idioma nos dan una visión estratégica a la hora de trabajar. Entendemos cómo el lenguaje impacta en ventas, en reputación y en la forma en que una empresa se posiciona en cada mercado.</p><p>No operamos como un proveedor de traducción masiva ni entregamos contenido sin control. Aplicamos criterio, estructura y supervisión experta en cada proyecto para asegurar que lo que se comunica tiene sentido en contexto.</p></div><p class="with">Nuestras soluciones lingüísticas:</p><ul><li><strong>Se integran con Global Readiness y AI Content Creation</strong> para trabajar con un enfoque único<strong>.</strong></li><li><strong>Refuerzan la coherencia</strong> de tu sistema de comunicación internacional.</li><li><strong>Reducen riesgos culturales</strong> y reputacionales en cada mercado.</li><li><strong>Mejoran la claridad</strong> de tus materiales comerciales y técnicos.</li><li><strong>Establecen una base sólida</strong> para escalar contenido con control.</li></ul></div><span class="ph-label">Fondo: profesional trabajando con documentos (diferencia_lingüístico.png), overlay oscuro</span></section>
+<section class="foryou lt"><div class="split"><div class="reveal"><div style="width:44px;height:70px;margin-bottom:28px"><svg viewBox="0 0 120 180" aria-hidden="true"><path fill="#E7780F" d="M72 2C96 2 116 21 116 46V134C116 159 96 178 72 178C52 178 36 166 30 150L2 146C14 139 22 128 25 117V46C25 21 46 2 72 2Z"></path></svg></div><h2>Esto es para ti si...</h2></div><ul class="kw reveal"><li>Exportas y quieres asegurar que tu comunicación no pierde precisión ni credibilidad.</li><li>Trabajas en varios idiomas y detectas incoherencias entre mercados.</li><li>Has usado IA o varios proveedores y necesitas control y unificación.</li><li>Tu documentación técnica o comercial es clave en la venta internacional.</li><li>Quieres una base lingüística sólida antes de escalar contenido.</li><li>No buscas volumen barato, sino rigor y coherencia internacional.</li></ul></div></section>
+<section class="photo ph-faq faqband"><div class="inner"><p class="eyebrow reveal">Preguntas frecuentes</p><h2 class="reveal">FAQs</h2><div class="qa reveal"><h3>¿En qué os diferenciáis de una agencia de traducción tradicional?</h3><p>Trabajamos con enfoque estratégico. No solo traducimos: validamos registro, terminología, coherencia y función comercial del texto en el mercado destino.</p></div><div class="qa reveal"><h3>¿Utilizáis IA a la hora de traducir?</h3><p>Utilizamos tecnología como la inteligencia artificial en los casos en los que aporte eficiencia, pero siempre con revisión y control humano.</p></div><div class="qa reveal"><h3>¿Podéis revisar contenido ya traducido por otro proveedor?</h3><p>Sí. Realizamos revisiones lingüísticas de estilo y de contenido, además de control de calidad multilingüe para detectar incoherencias y prevenir futuros problemas de calidad.</p></div><div class="qa reveal"><h3>¿Trabajáis con documentación técnica?</h3><p>Sí. Especialmente en sectores industriales, maquinaria, alimentación especializada, farmacia, cosmética y entornos B2B técnicos.</p></div><div class="qa reveal"><h3>¿Y si solo necesito ayuda con una traducción puntual?</h3><p>Si tienes una necesidad de traducción puramente transaccional y sin criterio estratégico, probablemente no somos el proveedor adecuado para ti.</p></div></div><span class="ph-label">Fondo: oficina (foto-oficina-2.jpg), overlay oscuro</span></section>
+</main>
+<footer class="ftr">
+<div class="f-cols">
+<div>
+<p class="f-tag">Estamos aquí para ayudarte a comunicar mejor.</p>
+<div class="social">
+<a href="https://www.instagram.com/wordworks_sl" aria-label="Instagram de Word Works"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"></rect><circle cx="12" cy="12" r="4.6"></circle><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+<a href="https://www.linkedin.com/company/word-works-s-l-/" aria-label="LinkedIn de Word Works"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2.5" y="8.5" width="4.4" height="13"></rect><circle cx="4.7" cy="4.4" r="2.5"></circle><path d="M9.6 8.5h4.2v1.9c.7-1.2 2.2-2.2 4.4-2.2 4 0 4.7 2.6 4.7 6V21.5h-4.4v-6.4c0-1.6-.1-3.4-2.2-3.4-2.2 0-2.5 1.6-2.5 3.3v6.5H9.6Z"></path></svg></a>
+</div>
+<h5>Contacto</h5>
+<div class="f-contact"><a href="mailto:info@wordworks.es">info@wordworks.es</a><a href="tel:+34916403738">+34 916 403 738</a></div>
+</div>
+<div><h5>Navegación</h5><ul class="f-links"><li><a href="Blog.dc.html">Blog</a></li><li><a href="TrabajaConNosotras.dc.html">Trabaja con nosotras</a></li><li><a href="FAQ.dc.html">FAQs</a></li><li><a href="Contacto.dc.html">Contacto</a></li></ul></div>
+<div><h5>Legal</h5><ul class="f-links"><li><a class="b" href="AvisoLegal.dc.html">Aviso legal</a></li><li><a class="b" href="Privacidad.dc.html">Política de privacidad</a></li><li><a href="Cookies.dc.html">Política de <em>cookies</em></a></li></ul></div>
+</div>
+<p class="copy f-in">© 2026. Reservados todos los derechos.</p>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const open = !!(this.state && this.state.menuOpen);
+    return {
+      menuOpen: open,
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

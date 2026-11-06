@@ -1,0 +1,209 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "AIContent.dc.html": {
+      "expand": "fill",
+      "h": 6800,
+      "is_interactive": true,
+      "title": "AI Content Creation",
+      "w": 1440,
+      "x": 1520,
+      "y": 5620
+    },
+    "AvisoLegal.dc.html": {
+      "expand": "fill",
+      "h": 4600,
+      "is_interactive": true,
+      "title": "Aviso legal",
+      "w": 1440,
+      "x": 0,
+      "y": 17860
+    },
+    "Blog.dc.html": {
+      "expand": "fill",
+      "h": 2900,
+      "is_interactive": true,
+      "title": "Blog",
+      "w": 1440,
+      "x": 0,
+      "y": 12840
+    },
+    "Calidad.dc.html": {
+      "expand": "fill",
+      "h": 4300,
+      "is_interactive": true,
+      "title": "Calidad",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "Contacto.dc.html": {
+      "expand": "fill",
+      "h": 1700,
+      "is_interactive": true,
+      "title": "Contacto",
+      "w": 1440,
+      "x": 3040,
+      "y": 12840
+    },
+    "Cookies.dc.html": {
+      "expand": "fill",
+      "h": 5000,
+      "is_interactive": true,
+      "title": "Política de cookies",
+      "w": 1440,
+      "x": 3040,
+      "y": 17860
+    },
+    "Equipo.dc.html": {
+      "expand": "fill",
+      "h": 5000,
+      "is_interactive": true,
+      "title": "Equipo",
+      "w": 1440,
+      "x": 4560,
+      "y": 0
+    },
+    "FAQ.dc.html": {
+      "expand": "fill",
+      "h": 4600,
+      "is_interactive": true,
+      "title": "FAQ",
+      "w": 1440,
+      "x": 4560,
+      "y": 12840
+    },
+    "GlobalReadiness.dc.html": {
+      "expand": "fill",
+      "h": 6600,
+      "is_interactive": true,
+      "title": "Global Readiness",
+      "w": 1440,
+      "x": 0,
+      "y": 5620
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 5200,
+      "is_interactive": true,
+      "title": "Inicio",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "NuestraHistoria.dc.html": {
+      "expand": "fill",
+      "h": 4300,
+      "is_interactive": true,
+      "title": "Nuestra historia",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Privacidad.dc.html": {
+      "expand": "fill",
+      "h": 5600,
+      "is_interactive": true,
+      "title": "Política de privacidad",
+      "w": 1440,
+      "x": 1520,
+      "y": 17860
+    },
+    "SolucionesLinguisticas.dc.html": {
+      "expand": "fill",
+      "h": 6800,
+      "is_interactive": true,
+      "title": "Soluciones lingüísticas",
+      "w": 1440,
+      "x": 4560,
+      "y": 5620
+    },
+    "TeamReadiness.dc.html": {
+      "expand": "fill",
+      "h": 6800,
+      "is_interactive": true,
+      "title": "Team Readiness",
+      "w": 1440,
+      "x": 3040,
+      "y": 5620
+    },
+    "TrabajaConNosotras.dc.html": {
+      "expand": "fill",
+      "h": 2000,
+      "is_interactive": true,
+      "title": "Trabaja con nosotras",
+      "w": 1440,
+      "x": 1520,
+      "y": 12840
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-11-04T12:07:14Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "row0": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Inicio y Quiénes somos",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "row1": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Soluciones",
+      "w": 240,
+      "x": 0,
+      "y": 5320
+    },
+    "row2": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Recursos, contacto y FAQ",
+      "w": 240,
+      "x": 0,
+      "y": 12540
+    },
+    "row3": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Legal",
+      "w": 240,
+      "x": 0,
+      "y": 17560
+    },
+    "anim": {
+      "x": 6160,
+      "y": 0,
+      "w": 420,
+      "text": "Animaciones en este clon: titulares del hero suben al cargar; secciones, tarjetas y listas suben al hacer scroll; botones y tarjetas se elevan al pasar el ratón; menús desplegables con fundido. Las animaciones exactas del sitio en vivo no se pueden leer desde su HTML: confirmar en wordworks.es.",
+      "fill": "orange"
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "NuestraHistoria.dc.html",
+    "Calidad.dc.html",
+    "Equipo.dc.html",
+    "GlobalReadiness.dc.html",
+    "AIContent.dc.html",
+    "TeamReadiness.dc.html",
+    "SolucionesLinguisticas.dc.html",
+    "Blog.dc.html",
+    "TrabajaConNosotras.dc.html",
+    "Contacto.dc.html",
+    "FAQ.dc.html",
+    "AvisoLegal.dc.html",
+    "Privacidad.dc.html",
+    "Cookies.dc.html"
+  ],
+  "pages": [],
+  "title": "Word Works — wordworks.es clone"
+}
